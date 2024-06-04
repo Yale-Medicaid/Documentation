@@ -16,10 +16,9 @@ markdown_extensions:
       generic: true
 
 nav:
-  - Home: 'index.md'
-  - 'Onboarding':
-    - 'New Member Onboarding': 'new_member_onboarding.md'
-  - 'Data Science':
+  - Home: index.md
+  - Onboarding:
+    - New Member Onboarding: new_member_onboarding.md
 
 extra_javascript:
   - javascripts/mathjax.js
