@@ -1,9 +1,7 @@
-# New Member Onboarding
-
+## New Member Onboarding
 Welcome to the Yale Medicaid Lab! We're excited to have you on the team and look forward to working with you on the problems that matter most to the Medicaid program. This page provides all the resources you need to get up and running on our projects, understand our workflow, and learn about how we build and deploy software!
 
-# Administrative steps to getting started
-
+## Administrative steps to getting started
 There are several administrative steps to getting started that you may complete before you start:
 
 1. Get your Yale NET ID and e-mail set up.
@@ -33,8 +31,7 @@ There are several administrative steps to getting started that you may complete 
     - [Asana](www.asana.com/): Project Management
 
 
-# Getting to know the team and projects
-
+## Getting to know the team and projects
 1. If you aren't familiar with the basics of the Medicaid program review [this](https://www.kff.org/medicaid/fact-sheet/medicaid-pocket-primer/) and ask Chima/Jacob/Anthony for additional resources if you would like more to read.
 
 2. Meet with Jacob and Chima to discuss the projects you'll be working on, why they're important, and what your role will be.
