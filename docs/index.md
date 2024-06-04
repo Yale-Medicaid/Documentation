@@ -1,17 +1,4 @@
-# Welcome to MkDocs
+# Welcome to the Yale Medicaid Lab
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This website provides onboarding documentation for new team members as well as documentation related to typical data sets we work with, best practices for research and any additional data science related information we find useful. 
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
