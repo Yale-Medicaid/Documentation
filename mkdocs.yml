@@ -21,6 +21,7 @@ nav:
     - New Member Onboarding: new_member_onboarding.md
   - Data Science:
     - Project Organization: project_organization.md
+    - Coding Conventions: coding_conventions.md 
 
 extra_javascript:
   - javascripts/mathjax.js

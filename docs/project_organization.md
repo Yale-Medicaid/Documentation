@@ -72,14 +72,14 @@ MI_enrollment/
 - `venv/`: The virtual environment for the project to ensure that we don't run into library versioning issues across projects
 
 - `code/`: Contains all code related to the project.
-  - `main.py`: Single script which can re-run all of the analyses from start to finish. For instance, in python this script might import other .py files and would have a single function that, if run, would reproduce all analyses from start to finish.
-  - `other_files.py`: Individual code files which are responsible for specific analyses. For isntance, it may make sense to have a different file for pulling copies of the raw data, one for the creation of the analytic table from the raw data, and another for sensitivy analyses.
+    - `main.py`: Single script which can re-run all of the analyses from start to finish. For instance, in python this script might import other .py files and would have a single function that, if run, would reproduce all analyses from start to finish.
+    - `other_files.py`: Individual code files which are responsible for specific analyses. For isntance, it may make sense to have a different file for pulling copies of the raw data, one for the creation of the analytic table from the raw data, and another for sensitivy analyses.
 
 - `trunk/`: This folder contains all data, derived tables and analytic extracts for this project.
-  - `raw/`: An optional folder. Would contain copies of Medicaid data which are pulled into this specific project. The raw data can be accessed directly from the storage at yale drive: YSPH_HPM-CC0940-MEDSPH. This is useful if you need a targeted or smaller subset of data to work from.
-  - `derived/`: This folder contains any data which are created specifically for this project. Within `derived/` each folder represents some atomic manipuation or derivation, which may be used in other processes or to create analytic products. The outputs stored in these directories are almost alwyas data files (.pkl, .parquet). 
-    - In python, the method responsible for running the analysis should share the same name as the folder. For isntance the method `create_enrollment_table()` would be responsible for generating `create_enrollment_table/output/enrollment_table.pkl`, making it easy for anyone to identify the code responsble
-  - `analysis/`: This folder contains the analytic endpoints, typically from analyses of some data produced in `derived\`. The outputs stored in these directories are typically figures or smaller data files containing coefficients or data that would create a manuscript table. 
+    - `raw/`: An optional folder. Would contain copies of Medicaid data which are pulled into this specific project. The raw data can be accessed directly from the storage at yale drive: YSPH_HPM-CC0940-MEDSPH. This is useful if you need a targeted or smaller subset of data to work from.
+    - `derived/`: This folder contains any data which are created specifically for this project. Within `derived/` each folder represents some atomic manipuation or derivation, which may be used in other processes or to create analytic products. The outputs stored in these directories are almost alwyas data files (.pkl, .parquet). 
+        - In python, the method responsible for running the analysis should share the same name as the folder. For isntance the method `create_enrollment_table()` would be responsible for generating `create_enrollment_table/output/enrollment_table.pkl`, making it easy for anyone to identify the code responsble
+    - `analysis/`: This folder contains the analytic endpoints, typically from analyses of some data produced in `derived\`. The outputs stored in these directories are typically figures or smaller data files containing coefficients or data that would create a manuscript table. 
 
 - `jupyter/`: A potential sandbox to test and develop code (Can use something different for R). Should be treated as temporary.
 
