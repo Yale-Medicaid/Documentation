@@ -19,6 +19,8 @@ nav:
   - Home: index.md
   - Onboarding:
     - New Member Onboarding: new_member_onboarding.md
+  - Data Science:
+    - Project Organization: project_organization.md
 
 extra_javascript:
   - javascripts/mathjax.js
