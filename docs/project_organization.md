@@ -77,7 +77,7 @@ MI_enrollment/
 
 - `trunk/`: This folder contains all data, derived tables and analytic extracts for this project.
     - `raw/`: An optional folder. Would contain copies of Medicaid data which are pulled into this specific project. The raw data can be accessed directly from the storage at yale drive: YSPH_HPM-CC0940-MEDSPH. This is useful if you need a targeted or smaller subset of data to work from.
-    - `derived/`: This folder contains any data which are created specifically for this project. Within `derived/` each folder represents some atomic manipuation or derivation, which may be used in other processes or to create analytic products. The outputs stored in these directories are almost alwyas data files (.pkl, .parquet). 
+    - `derived/`: This folder contains any data which are created specifically for this project. Within `derived/` each folder represents some atomic manipuation or derivation, which may be used in other processes or to create analytic products. The outputs stored in these directories are almost always data files (.pkl, .parquet). 
         - In python, the method responsible for running the analysis should share the same name as the folder. For isntance the method `create_enrollment_table()` would be responsible for generating `create_enrollment_table/output/enrollment_table.pkl`, making it easy for anyone to identify the code responsble
     - `analysis/`: This folder contains the analytic endpoints, typically from analyses of some data produced in `derived\`. The outputs stored in these directories are typically figures or smaller data files containing coefficients or data that would create a manuscript table. 
 
