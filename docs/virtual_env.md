@@ -46,7 +46,7 @@ python -m ipykernel install --user --name=my_venv
 
 Then, you can open up a juptyer notebook within GitBash with `jupyter notebook`. Now when you create a new notebook you will be able to select this virtual environment when creating a new .ipynb:
 
-![Selection of potential python environments](images/jupyter.png)
+![Selection of potential python environments](../images/jupyter.png)
 
 
 ### Deactivating the virtual environment
