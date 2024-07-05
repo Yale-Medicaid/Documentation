@@ -6,10 +6,10 @@ There are several administrative steps to getting started that you may complete 
 1. Get your Yale NET ID and e-mail set up.
     - Send an e-mail to Anthony and Sam with your netID and Yale e-mail address. We will use this to give you access to data and invite you to all of the relevant workspaces.
 
-    - Check with Sam to schedule an appointment with Dan Holland to set up your laptop and to get access to our server. You will need access to the following groups: 
+    - Check with Sam to schedule an appointment with Dan Holland to set up your laptop and to get access to our server. You will Chima to approve access to Dan Hollland for the following groups: 
         - Yale\ysph-hpm-rdpusers  (for RDP access)
         - Yale\ysph-hpm-ndumele (for access to Chima’s share)
-        - storage@yale group: YSPH_HPM-CC0940-MEDSPH2 (where HIPAA Medicaid Data is stored)
+        - storage@yale group: YSPH_HPM-CC0940-MEDSPH2. (where HIPAA Medicaid Data is stored)
     - When setting up your managed computer, requuest that ITS install the following programs:
         - Cisco AnyConnect Secure Mobility Client
         - Microsoft Remote Desktop
