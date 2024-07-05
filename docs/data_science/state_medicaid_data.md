@@ -1,3 +1,5 @@
+# State Medicaid Data
+
 ## Overview
 
 We have Medicaid data for the following states
@@ -40,11 +42,14 @@ State_Abbreviation/
 ├── Junk/
 ```
 
-- `Docs/`: contains any data dictionaries or relevant state specific information. 
+- `Docs/`: contains any data dictionaries or relevant state specific information
 - `Raw/`: contains minimally processed files obtained directly from the state. The only processing is generally to rename files and ensure files are saved in an easy to read format (e.g., .pkl or .parquet)
 - `Standard/`: contains files that have been initially processed, typically data have been typecast and variabled names are mapped to match the standard schema
 - `Intermediate/`: contains intermediate files that haven't been fully processed
 - `Gold/`: contains final files that have been fully processed and match our desired schema. These are generally the starting files used in any research project
 - `Analytic_tables/`: contain any analytic extracts which are derived from the gold files. For instance, contains member-level risk adjustors for each calendar year, annual measures of high- and low-value care, and a basic member-month analytic skeleton.
 - `Logs/`: contains any log files produced during the processing
-- `Junk/`: scrap folder containing any temporary outputs during development. 
+- `Junk/`: scrap folder containing any temporary outputs during development
+- `Analytic_tables/`: contain any analytic extracts which are derived from the gold files. For instance, contains member-level risk adjustors for each calendar year, annual measures of high- and low-value care, and a basic member-month analytic skeleton.
+- `Logs/`: contains any log files produced during the processing
+- `Junk/`: scrap folder containing any temporary outputs during development
