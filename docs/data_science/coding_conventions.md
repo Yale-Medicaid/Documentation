@@ -1,4 +1,6 @@
-These are some general guidelines that help maintain consistency across projects. 
+# Coding Conventions
+
+These are some general guidelines that help maintain consistency across projects.
 
 ## Naming Conventions
 
