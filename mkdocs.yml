@@ -22,9 +22,8 @@ nav:
   - Data Science:
     - Project Organization: project_organization.md
     - Virtual Environments: virtual_env.md
-    - Coding Conventions: coding_conventions.md
+    - Coding Conventions: coding_conventions.md 
     - State Medicaid Data: state_medicaid_data.md
-  - Images : image_test.md
 
 extra_javascript:
   - javascripts/mathjax.js
