@@ -28,8 +28,8 @@ There are several administrative steps to getting started that you may complete 
 3. Complete any I9 verifications or related workday HR administrative tasks that are required within your first week. 
 
 4. Create various accounts that allow us to work collaboratively and remotely. For certain things, if you already have an account linked to your personal e-mail feel free to use that, or create another one using your Yale e-mail address.
-    - [github](https://github.com/): Code version control and data science collaboration
-    - [dropbox](www.dropbox.com/): Group collaboration 
+    - [github](https://github.com): Code version control and data science collaboration
+    - [dropbox](www.dropbox.com): Group collaboration 
     - [Asana](www.asana.com/): Project Management
 
 5. Reach out to Sam or Anthony to make sure you are part of the YML Google Drive folder, Asana projects, and relevant dropbox folders. 
@@ -38,7 +38,7 @@ There are several administrative steps to getting started that you may complete 
 
 
 ## Getting to know the team and projects
-1. If you aren't familiar with the basics of the Medicaid program review [this](https://www.kff.org/medicaid/fact-sheet/medicaid-pocket-primer/) and ask Sam or Anthony for additional resources if you would like more to read.
+1. If you aren't familiar with the basics of the Medicaid program review [this](https://www.kff.org/medicaid/fact-sheet/medicaid-pocket-primer) and ask Sam or Anthony for additional resources if you would like more to read.
 
 2. Meet with Jacob and Chima to discuss the projects you'll be working on, why they're important, and what your role will be.
 
