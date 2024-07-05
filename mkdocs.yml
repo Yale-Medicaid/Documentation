@@ -15,6 +15,20 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
+nav:
+  - Home: index.md
+  - Onboarding:
+    - New Member Onboarding: onboarding/new_member_onboarding.md
+  - Data Science:
+    - Project Organization: data_science/project_organization.md
+    - Virtual Environments: data_science/virtual_env.md
+      - Python Virtual Environments: data_science/venv/py_venv.md
+      - R Virtual Environments: data_science/venv/r_venv.md
+    - Coding Conventions: data_science/coding_conventions.md 
+    - State Medicaid Data: data_science/state_medicaid_data.md
+  - Project Links: project_links.md
+
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6

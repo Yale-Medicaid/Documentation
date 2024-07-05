@@ -1,8 +1,3 @@
-# Python Virtual Envionments
-
-Setting up a virtual environment for each project is highly recommended. This ensures the code remains reproducible even if packages required by other projects are modified. The following shows one way to set up virtual environments using GitBash, other options are available using the cmd prompt if you're knowledgeable of that.
-
-
 The [Python Packaging User Guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) contains step-by-step instructions for creating and using a virtual environment, the steps below are explicit to one way to do so on our server.
 
 ### Creating a New Virtual Environment
@@ -47,7 +42,6 @@ python -m ipykernel install --user --name=my_venv
 ```
 
 Then, you can open up a juptyer notebook within GitBash with `jupyter notebook`. Now when you create a new notebook you will be able to select this virtual environment.
-
 
 ### Deactivating the virtual environment
 Typing `deactivate` will deactivate the currently activated virtual environment.
