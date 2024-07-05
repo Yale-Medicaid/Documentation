@@ -1,10 +1,10 @@
-# Virtual Environments
+# Python Virtual Envionments
 
 Setting up a virtual environment for each project is highly recommended. This ensures the code remains reproducible even if packages required by other projects are modified. The following shows one way to set up virtual environments using GitBash, other options are available using the cmd prompt if you're knowledgeable of that.
 
+
 The [Python Packaging User Guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) contains step-by-step instructions for creating and using a virtual environment, the steps below are explicit to one way to do so on our server.
 
-## Python Virtual Environments
 ### Creating a New Virtual Environment
 
 To set up a virtual environment for a project you can navigate to the project folder (for instance `Anthony/NewProject/`) and activate GitBash. (For example, if using the file explorer, right click and select `GitBash Here`). This will open GitBash and you should see the following:
