@@ -45,6 +45,6 @@ State_Abbreviation/
 - `Standard/`: contains files that have been initially processed, typically data have been typecast and variabled names are mapped to match the standard schema
 - `Intermediate/`: contains intermediate files that haven't been fully processed
 - `Gold/`: contains final files that have been fully processed and match our desired schema. These are generally the starting files used in any research project
-- `Analytic_tables`: contain any analytic extracts which are derived from the gold files. For instance, contains member-level risk adjustors for each calendar year, annual measures of high- and low-value care, and a basic member-month analytic skeleton.
-- `Logs\`: contains any log files produced during the processing
-- `Junk\`: scrap folder containing any temporary outputs during development. 
+- `Analytic_tables/`: contain any analytic extracts which are derived from the gold files. For instance, contains member-level risk adjustors for each calendar year, annual measures of high- and low-value care, and a basic member-month analytic skeleton.
+- `Logs/`: contains any log files produced during the processing
+- `Junk/`: scrap folder containing any temporary outputs during development. 
