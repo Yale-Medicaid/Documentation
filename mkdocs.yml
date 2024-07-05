@@ -21,7 +21,8 @@ nav:
     - New Member Onboarding: onboarding/new_member_onboarding.md
   - Data Science:
     - Project Organization: data_science/project_organization.md
-    - Virtual Environments: data_science/virtual_env.md
+    - Virtual Environments: 
+      - Overview: data_science/venv/venv_overview.md
       - Python Virtual Environments: data_science/venv/py_venv.md
       - R Virtual Environments: data_science/venv/r_venv.md
     - Coding Conventions: data_science/coding_conventions.md 
