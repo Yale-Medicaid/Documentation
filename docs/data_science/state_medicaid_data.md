@@ -15,7 +15,7 @@ We have Medicaid data for the following states
 ### Obtaining Access to State Data
 Once you have obtained access to `YSPH_HPM-CC0940-MEDSPH2` you will need to log into the server and do the following:
 
-1. open File Explorer (the one with the yellow folder icon)
+1. Open File Explorer (the one with the yellow folder icon)
 2. Click on This PC on the left side
 3. At the top toolbar click on Computer – Map network drive – Map Network Drive
 4. Keep the default drive letter `Y:`

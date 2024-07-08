@@ -12,7 +12,7 @@ These are some general guidelines that help maintain consistency across projects
         - `claims_2012.parquet`
     - CamelCase, words denoted by capilization
         - `EnrollmentTable.csv`
-        - `Claims2010.parquet`
+        - `Claims2012.parquet`
 
 ### Python-Specific Naming Conventions
 

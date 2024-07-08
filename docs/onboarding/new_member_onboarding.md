@@ -1,4 +1,4 @@
-Welcome to the Yale Medicaid Lab! We're excited to have you on the team and look forward to working with you on the problems that matter most to the Medicaid program. This page provides all the resources you need to get up and running on our projects, understand our workflow, and learn about how we build and deploy software!
+Welcome to the SCALE (State Collaborations to Advance LEarning) in Medicaid Lab! We're excited to have you on the team and look forward to working with you on the problems that matter most to the Medicaid program. This page provides all the resources you need to get up and running on our projects, understand our workflow, and learn about how we build and deploy software!
 
 ## Administrative steps to getting started
 There are several administrative steps to getting started that you may complete before you start:
