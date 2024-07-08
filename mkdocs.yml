@@ -14,6 +14,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.arithmatex:
       generic: true
+  - attr_list
 
 nav:
   - Home: index.md
@@ -27,6 +28,7 @@ nav:
       - R Virtual Environments: data_science/venv/r_venv.md
     - Coding Conventions: data_science/coding_conventions.md 
     - State Medicaid Data: data_science/state_medicaid_data.md
+    - Connecting to the Server: data_science/server_connect.md
   - Project Links: project_links.md
 
 
