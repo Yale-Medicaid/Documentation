@@ -24,7 +24,7 @@ Due to the size of the national data set, T-MSIS data are housed in the HIPAA al
 	- Are you a Principal Investigator: No
 	- Principal Investigator: Chima Ndumele
 	- Clusters: Milgram
-	- Special Requests: request access to the medicaid_lab group.
+	- Special Requests: request access to the `medicaid` group.
 
 ### Data Organization
 
