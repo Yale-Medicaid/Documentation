@@ -29,7 +29,8 @@ nav:
       - R Virtual Environments: data_science/venv/r_venv.md
     - Coding Conventions: data_science/coding_conventions.md 
     - State Medicaid Data: data_science/state_medicaid_data.md
-    - T-MSIS Medicaid Data: data_science/tmsis_medicaid_data.md
+  - T-MSIS Data: 
+    - T-MSIS Overview: tmsis/tmsis_medicaid_data.md
   - Project Links: project_links.md
 
 
