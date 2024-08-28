@@ -60,15 +60,15 @@ Within each specific file folder the organization is state, then year:
 taf_demog_elig_base/
 ├── year=2016/
 │   ├── state=AK/
-│   │   └── data.paquet
+│   │   └── data.parquet
 │   ├── state=AL/
-│   │   └── data.paquet
+│   │   └── data.parquet
 │   └── ...
 ├── year=2017/
 │   ├── state=AK/
-│   │   └── data.paquet
+│   │   └── data.parquet
 │   ├── state=AL/
-│   │   └── data.paquet
+│   │   └── data.parquet
 │   └── ...
 └── ...
 ```
