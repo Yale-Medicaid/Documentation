@@ -58,11 +58,19 @@ If you haven't used Arrow or the parquet format before, first read [Hadley Wickh
 
 ## Tips and Tricks
 
-When working in a Milgram OnDemand session, you will occasionally need to reauthenticate. This can happen every hour or two, even if you're working the entire time.
+- When working in a Milgram OnDemand session, you will occasionally need to reauthenticate. This can happen every hour or two, even if you're working the entire time.
 
-![Milgram Reauthentication](../images/milgram_error_saving.png){: style="height: 200px;width: 400px;display: block; margin: 0 auto"}
+    ![Milgram Reauthentication](../images/milgram_error_saving.png){: style="height: 200px;width: 400px;display: block; margin: 0 auto"}
 
-An error saving a file is a big hint that you need to reauthenticate. Click "Ok," then navigate to the Milgram OnDemand "My Interactive Sessions" page in another tab. Refresh that page and reauthenticate. You can then re-join your RStudio Server session and get back to work.
+    An error saving a file is a big hint that you need to reauthenticate. Click "Ok," then navigate to the Milgram OnDemand "My Interactive Sessions" page in another tab. Refresh that page and reauthenticate. You can then re-join your RStudio Server session and get back to work.
+
+- If you're working on a large task in an RStudio Server session, you may see this error message:
+    
+	```
+	Error in `get_result(output = out, options)`: ! callr subprocess failed: could not start R, exited with non-zero status, has crashed or was killed ℹ See `$stderr` for standard error.
+	```
+    
+	This often implies that you have not allocated enough memory to the task. You could start a new interactive session with more memory (the maximum is 30 GB per CPU core) or you can submit a job with SLURM.
 
 ## Getting Help
 
