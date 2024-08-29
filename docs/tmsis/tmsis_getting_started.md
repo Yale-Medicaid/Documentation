@@ -57,3 +57,5 @@ If you haven't used Arrow or the parquet format before, first read [Hadley Wickh
 - [The R `arrow` package page](https://arrow.apache.org/docs/r/)
 
 ## Getting Help
+
+It takes some time to get started, but there are many resources to help. Anthony and other folks at the lab can assist with most questions, which you can ask individually or through the Medicaid lab's T-MSIS Slack channel. Issues with Milgram—including access, permissions, package installation errors, and code execution issues—should be directed to the [YCRC support desk](https://research.computing.yale.edu/support).
