@@ -11,10 +11,25 @@ Due to the size and nature of the national data set, T-MSIS data are housed in t
 	- Clusters: Milgram
 	- Special Requests: request access to the `medicaid` group.
 
-The special requests are not always honored; once you obtain access to Milgram, check your permissions by typing `groups` (or `groups [your_net_id]`) in the terminal. If you see `medicaid`, you're good to go. If not, let Anthony know.
-
 ## Using Milgram
 
-Once you have access to the `medicaid` group, you should be able to access the T-MSIS data.
+Once you've obtained access, sign into [Milgram OnDemand](ood-milgram.ycrc.yale.edu). You may need to be connected to the Yale VPN even if you're on the Yale Secure Wi-Fi.
+
+There are three ways you'll regularly interact with Milgram.
+
+### File Explorer
+
+First, you'll want to peruse files. Open OnDemand, then click on Files -> Home Directory in the navbar. That should take you to `/home/your_net_id/`. To see the Medicaid lab data and code, click "change directory" and enter `/gpfs/milgram/pi/medicaid_lab/`.
+
+
+
+### Coding
+You should do most of your own work in the `project` subfolder
+
+### Terminal
+
+- terminal: The special requests are not always honored; once you obtain access to Milgram, check your permissions by typing `groups` (or `groups [your_net_id]`) in the terminal. If you see `medicaid`, you're good to go. If not, let Anthony know.; also mention alias for medicaid_lab
 
 ## T-MSIS Tech Stack
+
+## Getting Help
