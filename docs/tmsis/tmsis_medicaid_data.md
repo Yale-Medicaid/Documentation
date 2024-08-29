@@ -82,3 +82,7 @@ Additional ResDAC documentation:
 * [Documentation for other services files](https://resdac.org/cms-data/files/taf-ot)
 * [Documentation for long term care files](https://resdac.org/cms-data/files/taf-lt)
 * [Data Quality Atlas](https://www.medicaid.gov/dq-atlas/welcome)
+
+---
+
+Head over to our [getting started](tmsis_getting_started.md) guide to set up your account and start working with T-MSIS.
