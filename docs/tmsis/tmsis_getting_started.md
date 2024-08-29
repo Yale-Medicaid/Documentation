@@ -45,7 +45,7 @@ For most T-MSIS tasks, the interactive session has enough computing power to wor
 
 ## T-MSIS Tech Stack
 
-Begin by reading the [ResDAC documentation](tmsis_medicaid_data.md#resdac-documentation). Then, you'll want to familiarize yourself with the tech stack the Medicaid lab uses.
+Begin by reading the [Documentation](tmsis_medicaid_data.md#documentation) section in the T-MSIS Medicaid Data page. Then, you'll want to familiarize yourself with the tech stack the Medicaid lab uses.
 
 We store all our data in parquet files. R programmers can use the `arrow` package to connect to these files, and Python programmers can use `pyarrow`.
 
