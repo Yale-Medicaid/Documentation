@@ -66,4 +66,4 @@ An error saving a file is a big hint that you need to reauthenticate. Click "Ok,
 
 ## Getting Help
 
-It takes some time to get started, but there are many resources to help. Anthony and other folks at the lab can assist with most questions, which you can ask individually or through the Medicaid lab's T-MSIS Slack channel. Issues with Milgram—including access, permissions, package installation errors, and code execution issues—should be directed to the [YCRC support desk](https://research.computing.yale.edu/support).
+It takes some time to get started, but there are many resources to help. Anthony and other folks at the lab can assist with most questions, which you can ask individually or through the Medicaid lab's T-MSIS Slack channel. Issues with Milgram—including access, permissions, package installation errors, and code execution issues—can be directed to the [YCRC support desk](https://research.computing.yale.edu/support).
