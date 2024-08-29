@@ -1,6 +1,6 @@
 # Virtual Environments in R
 
-The most common way to use a virtual environment in R is through the `renv` package, developed by Posit.  The best place to learn about using renv is the package's introductory vignette [here](https://rstudio.github.io/renv/articles/renv.html), which provides a brief overview of the package and everything you need to get started.
+The most common way to use a virtual environment in R is through the `renv` package, developed by Posit. The best place to learn about using `renv` is the package's introductory vignette [here](https://rstudio.github.io/renv/articles/renv.html), which provides a brief overview of the package and everything you need to get started.
 
 You can also see examples of `renv` being used in practice in many of our R codebases on github, including:
 
