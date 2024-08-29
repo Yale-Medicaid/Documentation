@@ -56,6 +56,14 @@ If you haven't used Arrow or the parquet format before, first read [Hadley Wickh
 - [An online book by Apache](https://arrow.apache.org/cookbook/r/)
 - [The R `arrow` package page](https://arrow.apache.org/docs/r/)
 
+## Tips and Tricks
+
+When working in a Milgram OnDemand session, you will occasionally need to reauthenticate. This can happen every hour or two, even if you're working the entire time.
+
+![Milgram Reauthentication](../images/milgram_error_saving.png){: style="height: 200px;width: 400px;display: block; margin: 0 auto"}
+
+An error saving a file is a big hint that you need to reauthenticate. Click "Ok," then navigate to the Milgram OnDemand "My Interactive Sessions" page in another tab. Refresh that page and reauthenticate. You can then re-join your RStudio Server session and get back to work.
+
 ## Getting Help
 
 It takes some time to get started, but there are many resources to help. Anthony and other folks at the lab can assist with most questions, which you can ask individually or through the Medicaid lab's T-MSIS Slack channel. Issues with Milgram—including access, permissions, package installation errors, and code execution issues—should be directed to the [YCRC support desk](https://research.computing.yale.edu/support).
