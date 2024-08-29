@@ -66,7 +66,7 @@ taf_demog_elig_base/
 
 ## ResDAC Documentation
 
-ResDAC provides extensive documentation for all of the files. We have maintained the original column names and datatypes, so all the documentation presented on this website applies to the standardized files as well as the raw files. The CCW user guide and [demographic](https://resdac.org/sites/datadocumentation.resdac.org/files/CCW%20Codebook%20TAF%20Demographic%20Eligibility_Version%20022023.pdf) and [claims](https://resdac.org/sites/datadocumentation.resdac.org/files/CCW%20Codebook%20TAF%20Claims_Version%20022023.pdf) codebooks are particularly helpful.
+ResDAC provides extensive documentation for all of the files. We have maintained the original column names and datatypes, so all the documentation presented on this website applies to the standardized files as well as the raw files. The CCW [user guide](https://www2.ccwdata.org/documents/10280/19002246/ccw-taf-rif-user-guide.pdf) and [demographic](https://resdac.org/sites/datadocumentation.resdac.org/files/CCW%20Codebook%20TAF%20Demographic%20Eligibility_Version%20022023.pdf) and [claims](https://resdac.org/sites/datadocumentation.resdac.org/files/CCW%20Codebook%20TAF%20Claims_Version%20022023.pdf) codebooks are particularly helpful.
 
 * [Documentation for demographic and eligibility files](https://resdac.org/cms-data/files/taf-de)
 * [Documentation for inpatient files](https://resdac.org/cms-data/files/taf-ip)
