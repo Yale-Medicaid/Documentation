@@ -13,13 +13,17 @@ Due to the size and nature of the national data set, T-MSIS data are housed in t
 
 ## Using Milgram
 
-Once you've obtained access, sign into [Milgram OnDemand](ood-milgram.ycrc.yale.edu). You may need to be connected to the Yale VPN even if you're on the Yale Secure Wi-Fi.
+Once you've obtained access, sign into [Milgram OnDemand](https://ood-milgram.ycrc.yale.edu/). You may need to be connected to the Yale VPN even if you're on the Yale Secure Wi-Fi.
 
 There are three ways you'll regularly interact with Milgram.
 
 ### File Explorer
 
 First, you'll want to peruse files. Open OnDemand, then click on Files -> Home Directory in the navbar. That should take you to `/home/your_net_id/`. To see the Medicaid lab data and code, click "change directory" and enter `/gpfs/milgram/pi/medicaid_lab/`.
+
+!!! warning "Don't download files"
+
+    It's easy---too easy---to accidentally download a file in the explorer. T-MSIS data are only allowed to live on Milgram, so do not download them. Furthermore, don't download any files with information that could possibly recreate individual-level claims data.
 
 
 
