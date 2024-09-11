@@ -1,10 +1,12 @@
 # T-MSIS TAF RIF
 
-CMS has Transformed Medicaid Statistical Information System (T-MSIS) Analytic Files (TAF) from which they create Reasearch Identifiiable Files (RIF) to meet the needs of researchers. We're just going to coloquially refer to this data as T-MSIS data (though it's technically the TAF RIF). CMS has provided substantial documentation about the files [here](https://www.medicaid.gov/medicaid/data-systems/macbis/medicaid-chip-research-files/transformed-medicaid-statistical-information-system-t-msis-analytic-files-taf/index.html)
+CMS has Transformed Medicaid Statistical Information System (T-MSIS) Analytic Files (TAF) from which they create Reasearch Identifiiable Files (RIF) to meet the needs of researchers. We're just going to coloquially refer to this data as T-MSIS data (though it's technically the TAF RIF). CMS has provided substantial documentation about the files [here](https://www.medicaid.gov/medicaid/data-systems/macbis/medicaid-chip-research-files/transformed-medicaid-statistical-information-system-t-msis-analytic-files-taf/index.html).
 
-## Overview
+After reading this page, check out our [getting started](tmsis_getting_started.md) guide.
 
-We have Medicaid data for the following time periods
+## Available Data
+
+We have Medicaid data for the following time periods:
 
 | Year  |   Purchased  | Partitioned  | Files       |
 | :---- | :----------: | :----------: | :---------- |
@@ -15,18 +17,7 @@ We have Medicaid data for the following time periods
 | 2020  |  Y           | Y            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
 | 2021  |  Y           | N            | |
 
-### Obtaining Access to T-MSIS Data
-Due to the size of the national data set, T-MSIS data are housed in the HIPAA aligned Milgram cluster at Yale Center for Research Computing. The first step is to [request an account](https://research.computing.yale.edu/support/hpc/account-request)
-
-1. Make sure Anthony is aware you are requesting an account he will need to approve the request
-2. Fill out the form
-	- Department or School: Yale School of Public Health
-	- Are you a Principal Investigator: No
-	- Principal Investigator: Chima Ndumele
-	- Clusters: Milgram
-	- Special Requests: request access to the `medicaid` group.
-
-### Data Organization
+## Data Organization
 
 T-MSIS data initially come as ~TB files broken up into several parts. We have partioned the files by year and by state to allow for more manageable chunks of data to be used for initial exploration. The clusters can then scale any analyses to a national level. 
 
@@ -54,7 +45,7 @@ TMSIS_taf/
 └── taf_rx_line/
 ```
 
-Within each specific file folder the organization is state, then year:
+Within each specific file folder the organization is by state, then year:
 
 ```
 taf_demog_elig_base/
@@ -73,12 +64,25 @@ taf_demog_elig_base/
 └── ...
 ```
 
-### ResDAC Documentation
+## Documentation
 
-ResDAC provides extensive documentation for all of the files. Because of this we have maintained the original column names and datatypes, so all the documentation presented on this website applies to the standardized files as well as the raw files.
+ResDAC provides extensive documentation for all of the files. We have maintained the original column names and datatypes, so all the documentation presented on this website applies to the standardized files as well as the raw files. Start by reading at least the few pages of the T-MSIS user guide, linked below. The two codebooks offer fantastic data dictionaries.
+
+Essential documentation:
+
+- [User guide (PDF download)](https://www2.ccwdata.org/documents/10280/19002246/ccw-taf-rif-user-guide.pdf)
+- [Demographic codebook](https://resdac.org/sites/datadocumentation.resdac.org/files/CCW%20Codebook%20TAF%20Demographic%20Eligibility_Version%20022023.pdf)
+- [Claims codebook](https://resdac.org/sites/datadocumentation.resdac.org/files/CCW%20Codebook%20TAF%20Claims_Version%20022023.pdf)
+
+Additional ResDAC documentation:
 
 * [Documentation for demographic and eligibility files](https://resdac.org/cms-data/files/taf-de)
 * [Documentation for inpatient files](https://resdac.org/cms-data/files/taf-ip)
 * [Documentation for pharmacy files](https://resdac.org/cms-data/files/taf-rx)
 * [Documentation for other services files](https://resdac.org/cms-data/files/taf-ot)
 * [Documentation for long term care files](https://resdac.org/cms-data/files/taf-lt)
+* [Data Quality Atlas](https://www.medicaid.gov/dq-atlas/welcome)
+
+---
+
+Head over to our [getting started](tmsis_getting_started.md) guide to set up your account and start working with T-MSIS.
