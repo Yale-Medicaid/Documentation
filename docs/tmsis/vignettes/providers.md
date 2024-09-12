@@ -10,7 +10,7 @@ The Centers for Medicare and Medicaid Services publish information about each pr
 
 A [repository](https://github.com/Yale-Medicaid/NPPES_NPI) in the Yale Medicaid GitHub organization cleans the dataset and converts the output into a parquet file. The cleaned dataset is located at `/gpfs/milgram/pi/medicaid_lab/data/public/nppes/ingested/` on Milgram.
 
-The cleaned dataset contains the provider NPI, credential, gender, taxnomoy information, and an "entity type code" that distinguishes individuals from organizations. (The entity type code can be `"individual"`, `"organization"`, or missing.)
+The cleaned dataset contains the provider NPI, credential, gender, taxonomy information (though we suggest using taxonomy values from NUCC, located at `/gpfs/milgram/pi/medicaid_lab/data/public/nucc_taxonomy/ingested/nucc_taxomony/` on Milgram), and an "entity type code" that distinguishes individuals from organizations. The entity type code can be `"individual"`, `"organization"`, or missing.
 
 ## Providers
 
