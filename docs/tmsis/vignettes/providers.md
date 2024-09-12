@@ -24,4 +24,6 @@ Though the servicing provider is assigned at each line on a claim, we've found t
 
 It's easier to identify a facility, at least in the Other Services file. The `BLG_PRVDR_NPI` column is the "The National Provider ID (NPI) of the billing entity responsible for billing a patient for healthcare services. The billing provider can also be servicing, referring, or prescribing provider. Can be admitting provider except for Long Term Care," according to the documentation. The `BLG_PRVDR_NPI` column appears in the IP, LT, OT, and RX header files.
 
+We've found the vast majority (98-99%) of `BLG_PRVDR_NPI` entity type codes are `"organization"`, which is what we want. Again, this may not be true outside the Other Services file.
 
+Also keep in mind that some facilities may have multiple NPI values. This can provide greater granularity to identify parts of a hospital, but it may affect any facility-level aggregations.
