@@ -36,6 +36,7 @@ nav:
     - Working on Milgram: tmsis/tmsis_getting_started.md
     - Vignettes:
       - Identifying ED Visits: tmsis/vignettes/identifying_ED_visits.md
+      - Identifying Providers and Facilities: tmsis/vignettes/providers.md
   - Project Links: project_links.md
 
 
