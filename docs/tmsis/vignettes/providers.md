@@ -18,6 +18,8 @@ The `SRVC_PRVDR_NPI` column is available in the IP, LT, and OT line files. The s
 
 In our research on emergency departments, we join the NPPES NPI dataset into our claims dataset using the `SRVC_PRVDR_NPI` column. Then, we filter the entity type code to `"individual"`. Unfortunately, less than half of our claims in the T-MSIS Other Services file have an `"individual"` assigned at the servicing provider, so we cannot identify an actual doctor for the remaining majority of the claims. We've noticed that whenever a servicing provider has entity type `"organization"`, the servicing NPI is identical to the billing NPI; that is, the facility overall is the "health care professional" who provides service.
 
+Though the servicing provider is assigned at each line on a claim, we've found that a single claim often has the same `SRVC_PRVDR_NPI` value on each line. This isn't universal, though, so you should take care if selecting a "primary" `SRVC_PRVDR_NPI`.
+
 ## Facilities
 
 It's easier to identify a facility, at least in the Other Services file. The `BLG_PRVDR_NPI` column is the "The National Provider ID (NPI) of the billing entity responsible for billing a patient for healthcare services. The billing provider can also be servicing, referring, or prescribing provider. Can be admitting provider except for Long Term Care," according to the documentation. The `BLG_PRVDR_NPI` column appears in the IP, LT, OT, and RX header files.
