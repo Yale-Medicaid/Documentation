@@ -72,6 +72,20 @@ If you haven't used Arrow or the parquet format before, first read [Hadley Wickh
     
 	This often implies that you have not allocated enough memory to the task. You could start a new interactive session with more memory (the maximum is 30 GB per CPU core) or you can submit a job with SLURM.
 
+## Useful SLURM commands
+
+To submit a job, you'll need a [shell script that runs your code](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/slurm-examples/).
+
+You'll generally submit batch jobs using the terminal. `cd` to the folder with the shell script, then type `sbatch submit.sh` (assuming your shell script is called `submit.sh`). You should receive an email from no-reply@milgram.ycrc.yale.edu when the job starts and when it finishes or fails for any reason (error in the code, invalid configuration, ran out of memory, etc.).
+
+Most jobs should start immediately. If you still haven't received that "job started" email, you're probably in the queue. This is usually a result of you requesting a lot of resources _and_ many other users running their own computationally expensive tasks.
+
+First, run `squeue --me` to make sure your job went through.
+
+Then, run `squeue -p [partition_name]` to see who else is using Milgram. (`partition_name` can be `day`, `week`, etc.) Check the [Milgram user guide](https://docs.ycrc.yale.edu/clusters/milgram/) to see the total available compute nodes. If you sum up the existing jobs, you'll probably see that your job would fall over the limits.
+
+You can cancel a job with `scancel [job_id]`. The cluster will tell you your `job_id` when you submit it, and you can also find it in your queue.
+
 ## Getting Help
 
 It takes some time to get started, but there are many resources to help. Anthony and other folks at the lab can assist with most questions, which you can ask individually or through the Medicaid lab's T-MSIS Slack channel. Issues with Milgram—including access, permissions, package installation errors, and code execution issues—can be directed to the [YCRC support desk](https://research.computing.yale.edu/support).
