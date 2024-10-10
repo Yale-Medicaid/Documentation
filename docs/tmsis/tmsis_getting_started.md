@@ -72,7 +72,7 @@ If you haven't used Arrow or the parquet format before, first read [Hadley Wickh
     
 	This often implies that you have not allocated enough memory to the task. You could start a new interactive session with more memory (the maximum is 30 GB per CPU core) or you can submit a job with SLURM.
 
-## Useful SLURM commands
+## Useful SLURM Commands
 
 To submit a job, you'll need a [shell script that runs your code](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/slurm-examples/).
 
@@ -86,6 +86,16 @@ Then, run `squeue -p [partition_name]` to see who else is using Milgram. (`parti
 
 You can cancel a job with `scancel [job_id]`. The cluster will tell you your `job_id` when you submit it, and you can also find it in your queue.
 
+### Finding Available Resources
+
+!!! warning "Some guesswork"
+
+    Some of the information in this subsection may not be entirely accurate. Computing is hard! When in doubt, reach out to the [YCRC support desk](https://research.computing.yale.edu/support).
+
+When you run `squeue -p [partition_name]`, look at the values in the `NODELIST(REASON)` column. Jobs in progress will have a node ID, while queued jobs will have a reason in parentheses, e.g., `(Resources)`.
+
+Say I'm submitting a job requesting one node and all 36 cores, but I'm stuck in the queue. First, I will look at the existing jobs. If all the jobs on one node look like they'll finish soon, perhaps I'll wait in the queue. But if the jobs have another few days, it may be faster to reduce my requested resources. In this example, node `r811u15n01` is running three jobs totalling 12 cores, and node `r811u15n02` is running two jobs totalling five cores. I can wait it out, or I can request 31 cores instead of 36, and my job will start immediately on node `r811u15n02`.
+
 ## Getting Help
 
-It takes some time to get started, but there are many resources to help. Anthony and other folks at the lab can assist with most questions, which you can ask individually or through the Medicaid lab's T-MSIS Slack channel. Issues with Milgram—including access, permissions, package installation errors, and code execution issues—can be directed to the [YCRC support desk](https://research.computing.yale.edu/support).
+It takes some time to get started, but there are many resources to help. Anthony and other folks at the lab can assist with most questions, which you can ask individually or through the Medicaid lab's T-MSIS Slack channel. Issues with Milgram—including access, permissions, package installation errors, and code execution—can be directed to the [YCRC support desk](https://research.computing.yale.edu/support).
