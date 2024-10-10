@@ -94,7 +94,9 @@ You can cancel a job with `scancel [job_id]`. The cluster will tell you your `jo
 
 When you run `squeue -p [partition_name]`, look at the values in the `NODELIST(REASON)` column. Jobs in progress will have a node ID, while queued jobs will have a reason in parentheses, e.g., `(Resources)`.
 
-Say I'm submitting a job requesting one node and all 36 cores, but I'm stuck in the queue. First, I will look at the existing jobs. If all the jobs on one node look like they'll finish soon, perhaps I'll wait in the queue. But if the jobs have another few days, it may be faster to reduce my requested resources. In this example, node `r811u15n01` is running three jobs totalling 12 cores, and node `r811u15n02` is running two jobs totalling five cores. I can wait it out, or I can request 31 cores instead of 36, and my job will start immediately on node `r811u15n02`.
+Say I'm submitting a job requesting one node and all 36 cores, but I'm stuck in the queue. First, I will look at the existing jobs. If all the jobs on one node look like they'll finish soon, perhaps I'll wait in the queue. But if the jobs have another few days, it may be faster to reduce my requested resources.
+
+To see how much you need to reduce your resources, run `scontrol show node [node_id]` with one of the `node_id` values from `squeue -p [partition_name]`. The `CfgTRES` row of the output shows the maximum values, and the `AllocTRES` shows what's in use. Subtract `AllocTRES` from `CfgTRES` to see what's available.
 
 ## Getting Help
 
