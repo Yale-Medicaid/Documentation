@@ -4,11 +4,11 @@ We have some recommendations for effective communications on the team. None of t
 
 ## Project Check-in Meetings
 
-*When meeting with supervisors, here are some tips to keep things moving and build trust.*
+*When you're accountable for project updates, here are some tips to keep things moving and build trust.*
 
 > **NOTE:** This section refers to meeting with supervisors about projects. Separately, we recommend finding time to chat 1:1 about personal growth, interests, and transparency. These 1:1s may benefit from a shared document to track notes and thoughts; however, those discussions probably don't benefit from the (more formal) recommendations below.
 
-Regular meetings with project supervisors are important to provide updates, address blockers, and elicit feedback. This is a lot to cover; typically, there's too much to discuss during the limited meeting time. To help organize project updates, we created [a slide template](https://docs.google.com/presentation/d/1FRSLc9K6z2stOXpcM7uPLf_43da_h2Q_Qy5sJxfnc4w/edit#slide=id.g3075ba84a90_0_0).
+Regular project meetings are important to provide updates, address blockers, and elicit feedback. This is a lot to cover; typically, there's too much to discuss during the limited meeting time. To help organize project updates, we created [a slide template](https://docs.google.com/presentation/d/1FRSLc9K6z2stOXpcM7uPLf_43da_h2Q_Qy5sJxfnc4w/edit#slide=id.g3075ba84a90_0_0).
 
 The slide can be personalized and updated based on your needs. In this process, keep in mind the considerations that the template emphasizes:
 
