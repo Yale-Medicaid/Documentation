@@ -22,6 +22,7 @@ nav:
   - Home: index.md
   - Onboarding:
     - New Member Onboarding: onboarding/new_member_onboarding.md
+    - New Member Tips: onboarding/new_member_tips.md
   - Data Science:
     - Connecting to the Server: data_science/server_connect.md
     - Project Organization: data_science/project_organization.md
