@@ -58,6 +58,7 @@ The slide can be personalized and updated based on your needs. In this process, 
 > Lab_Staff
 > 
 > ***Agenda***
+> 
 > - Review proposed edits
 > - Create timeline to finalize draft
 > - Delegate remaining tasks
@@ -108,6 +109,7 @@ The slide can be personalized and updated based on your needs. In this process, 
 > +++
 > 
 > *Problem details*
+> 
 > - **Issue #1:** The data processing pipeline is failing when I try to merge MCO extracts. Specifically, it’s this line (Github link) with an error: "..."
 > - **Issue #2:** Formatting in the raw MCO data extract ("file_path.csv") has paid dates with an undefined encoding, which keeps me from running a trend analysis. See a data example below.
 > (Table)
