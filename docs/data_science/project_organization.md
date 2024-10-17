@@ -81,4 +81,6 @@ MI_enrollment/
 - `jupyter/`: A potential sandbox to test and develop code. (In an R project, this could be called `qmd`, `rmd`, `notebooks`, or something similar.) Should be treated as temporary.
 - `.gitfiles`: If the folder is version controlled with git. DATA SHOULD NEVER BE PUSHED. (Also avoid pushing any information that could recreate raw data.) Because the code exists in one directory, you can ignore `trunk/` and only maintain `code/`.
 
+## Project Templates
 
+We recommend starting your R projects from the [template repository](https://github.com/Yale-Medicaid/R_project_template/) on the Yale Medicaid Lab GitHub page. Follow the instructions in the read-me file in that repository.
