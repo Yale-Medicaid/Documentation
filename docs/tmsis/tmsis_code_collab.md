@@ -10,7 +10,7 @@ We will use `git` to collaboratively develop analyses. The most up to date, stab
 ## Set up 
 ### Quickstart for Git on Milgram
 
-<span style="color:#4781BE">**SSH Key**</span>
+<span style="color:#4781BE">**Generate SSH Key**</span>
 
 This saves you from having to type your password or provide a token every time. YCRC provides a [thorough guide](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/) on using and generating SSH keys, the main steps are outlined here. If you've already generated SSH keys (say to SSH into Milgram through the terminal) you can skip the generation steps. 
 
@@ -30,6 +30,7 @@ cat ~/.ssh/id_rsa.pub
 
 which will show a very long string beginning with something like `ssh-rsa `. Copy the entire outut (including the ssh-ra part). 
 
+<span style="color:#4781BE">**Add SSH Key to GitHub**</span>
 Now you need to add that public key to your GitHub Account: [instructions are provided by GitHUb](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account).
 
 1. Click on your account icon
@@ -46,7 +47,7 @@ Now when you clone a repository you can use the SSH remote URL.
 ### Existing Projects
 Navigate to the repository within Yale-Medicaid on Github. Click on the green `<> Code` button in the to right and copy the SSH url to your clipboard. 
 
-![SSH clone](../images/tmsis_ssh.png){: style="height: 200px;width: 400px;display: block; margin: 0 auto"}
+![SSH clone](../images/tmsis_ssh.png){: style="height: 345px;width: 898px;display: block; margin: 0 auto"}
     
 Within Milgram use the terminal to navigate to the directory where you'd like to clone this repository. This is very likely `/home/NETID/project/`. From there type
 
@@ -75,6 +76,9 @@ git checkout -b NEW_BRANCH_NAME
 ```
 
 and you should get a message `Switched to a new branch 'NEW_BRANCH_NAME'`. Try to make the name descriptive if the branch is for a specific task, otherwise I used something general like `anthony-dev`. 
+
+### Existing Projects
+TODO
 
 ## Contributing  
 
