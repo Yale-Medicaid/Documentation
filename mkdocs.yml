@@ -35,6 +35,7 @@ nav:
   - T-MSIS: 
     - T-MSIS Overview: tmsis/tmsis_medicaid_data.md
     - Working on Milgram: tmsis/tmsis_getting_started.md
+    - Collaborating on Code: tmsis/tmsis_code_collab.md
     - Vignettes:
       - Identifying ED Visits: tmsis/vignettes/identifying_ED_visits.md
       - Identifying Providers and Facilities: tmsis/vignettes/providers.md
