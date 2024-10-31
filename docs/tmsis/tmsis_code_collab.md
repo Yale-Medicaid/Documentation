@@ -48,7 +48,7 @@ Now when you clone a repository you can use the SSH remote URL.
 ### Existing Projects
 Navigate to the repository within Yale-Medicaid on Github. Click on the green `<> Code` button in the to right and copy the SSH url to your clipboard. 
 
-![SSH clone](../images/tmsis_ssh.png){: style="height: 345px;width: 898px;display: block; margin: 0 auto"}
+![SSH clone](../images/tmsis_ssh.png){: style="height: 345px;width: 895px;display: block; margin: 0 auto"}
     
 Within Milgram use the terminal to navigate to the directory where you'd like to clone this repository. This is very likely `/home/NETID/project/`. From there type
 
@@ -78,7 +78,7 @@ git checkout -b NEW_BRANCH_NAME
 
 and you should get a message `Switched to a new branch 'NEW_BRANCH_NAME'`. Try to make the name descriptive if the branch is for a specific task, otherwise I used something general like `anthony-dev`. 
 
-### Existing Projects
+### New Projects
 TODO
 
 ## Contributing  
@@ -132,3 +132,9 @@ git commit -am "some commit message"
 > 
 > - If using `-a` when committing, take the time to ensure you know exactly which files have changed as this commits `all` modifications. 
 > - I recommend against using a command like `git add -A` to add new files to tracking. Better to explicitly `git add file_name` as an added layer of security. (the .gitignore is a backstop...)
+
+Finally, committed changes can be pushed to the remote:
+
+```
+git push
+```
