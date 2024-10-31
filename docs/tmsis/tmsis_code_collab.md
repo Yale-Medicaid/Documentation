@@ -31,6 +31,7 @@ cat ~/.ssh/id_rsa.pub
 which will show a very long string beginning with something like `ssh-rsa `. Copy the entire outut (including the ssh-ra part). 
 
 <span style="color:#4781BE">**Add SSH Key to GitHub**</span>
+
 Now you need to add that public key to your GitHub Account: [instructions are provided by GitHUb](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account).
 
 1. Click on your account icon
@@ -130,4 +131,4 @@ git commit -am "some commit message"
 > ⚠️ Remember to check the files being added and information being committed to ensure no sensitive information is pushed to the remote. 
 > 
 > - If using `-a` when committing, take the time to ensure you know exactly which files have changed as this commits `all` modifications. 
-> - I recommend against using a command like `git add -A` to add new files to tracking. Better to explicitly do `git add file_name` as an added layer of explicit checking. (the .gitignore is a backstop...)
+> - I recommend against using a command like `git add -A` to add new files to tracking. Better to explicitly `git add file_name` as an added layer of security. (the .gitignore is a backstop...)

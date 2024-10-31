@@ -27,8 +27,8 @@ There are several administrative steps to getting started that you may complete 
 3. Complete any I9 verifications or related Workday HR administrative tasks that are required within your first week. 
 4. Create various accounts that allow us to work collaboratively and remotely. For certain things, if you already have an account linked to your personal e-mail feel free to use that, or create another one using your Yale e-mail address.
     - [GitHub](https://github.com): code version control and data science collaboration
-    - [Dropbox](www.dropbox.com): group collaboration 
-    - [Asana](www.asana.com/): project management
+    - [Dropbox](https://dropbox.com): group collaboration 
+    - [Asana](https://asana.com): project management
 5. Reach out to Sam or Anthony to make sure you are part of the YML Google Drive folder, Asana projects, and relevant Dropbox folders. 
 6. Set up a weekly 1:1 with Anthony. 
 
