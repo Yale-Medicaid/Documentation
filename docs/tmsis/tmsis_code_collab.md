@@ -1,6 +1,11 @@
 # Coding Collaboration
 
-We will use `git` to collaboratively develop analyses. The most up to date, stable, version of the libraries will be found in `/gpfs/milgram/pi/medicaid_lab/code/`, while researcher specific development branches can be stored in your own project directory. 
+We will use `git` to collaboratively develop analyses. The most up to date, stable, version of the libraries will be found in `/gpfs/milgram/pi/medicaid_lab/code/` on the main branch, while researcher specific development branches can be stored in your own project directory. 
+
+> ⚠️ Code will be pushed remotely to the Yale-Medicaid organization on GitHub. Repositories **must** be initialized with .gitignore files which ignore: 
+> 
+> - all common data file extensions (.parquet, .xlsx, .dta, .sas7bdat)
+> - files which display data for exploratory analyses (.ipynb)   
 
 ## Set up 
 ### Quickstart for Git on Milgram
@@ -41,7 +46,7 @@ Now when you clone a repository you can use the SSH remote URL.
 ### Existing Projects
 Navigate to the repository within Yale-Medicaid on Github. Click on the green `<> Code` button in the to right and copy the SSH url to your clipboard. 
 
-![SSH clone](../images/tmsis_ssh.png){: style="height: 100px;width: 200px;display: block; margin: 0 auto"}
+![SSH clone](../images/tmsis_ssh.png){: style="height: 200px;width: 400px;display: block; margin: 0 auto"}
     
 Within Milgram use the terminal to navigate to the directory where you'd like to clone this repository. This is very likely `/home/NETID/project/`. From there type
 
@@ -71,3 +76,54 @@ git checkout -b NEW_BRANCH_NAME
 
 and you should get a message `Switched to a new branch 'NEW_BRANCH_NAME'`. Try to make the name descriptive if the branch is for a specific task, otherwise I used something general like `anthony-dev`. 
 
+## Contributing  
+
+You can check the status of your current branch with 
+
+```
+git status
+```
+
+If there are no modified files and everything is up to date you will see:
+
+```
+On branch anthony-dev
+Your branch is up to date with 'origin/anthony-dev'.
+
+nothing to commit, working tree clean
+```
+
+Otherwise, if you've been making changes, in this example creating a new file called "test_add.py", `git status` will indicate the files which have changed or added:
+
+```
+Your branch is up to date with 'origin/anthony-dev'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test_add.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Because this is a new file, we will need to add it to tracking:
+
+```
+git add test_add.py
+```
+
+And when you are ready to commit several changes you would 
+
+```
+git commit -m "some commit message"
+```
+
+Alternatively, all changes to already tracked files can be commited with 
+
+```
+git commit -am "some commit message"
+```
+
+> ⚠️ Remember to check the files being added and information being committed to ensure no sensitive information is pushed to the remote. 
+> 
+> - If using `-a` when committing, take the time to ensure you know exactly which files have changed as this commits `all` modifications. 
+> - I recommend against using a command like `git add -A` to add new files to tracking. Better to explicitly do `git add file_name` as an added layer of explicit checking. (the .gitignore is a backstop...)
