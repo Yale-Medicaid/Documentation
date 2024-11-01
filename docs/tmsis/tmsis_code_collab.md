@@ -105,7 +105,7 @@ TODO
 
 ## Contributing  
 
-<span style="color:#4781BE">**Git 101**</span>
+### Git 101
 
 You can check the status of your current branch with 
 
@@ -165,7 +165,7 @@ Finally, committed changes can be pushed to the remote:
 git push
 ```
 
-<span style="color:#4781BE">**Updating environment.yml**</span>
+### Updating environment.yml 
 
 !!! note "Commit updates to environment.yml alongside code" 
     
