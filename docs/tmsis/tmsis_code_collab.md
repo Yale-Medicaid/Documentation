@@ -8,7 +8,10 @@ We will use `git` to collaboratively develop analyses. The most up to date, stab
 	Code will be pushed remotely to the Yale-Medicaid organization on GitHub. Repositories **must** be initialized with .gitignore files which ignores:
 	
 	- all common data file extensions (.parquet, .xlsx, .dta, .sas7bdat)
-	- files which display data for exploratory analyses (.ipynb)  
+	- files which display data for exploratory analyses (.ipynb)
+	- objects that can be used to recreate raw data (.Rdata, targets files)
+
+	You can find a template .gitignore [here](https://github.com/Yale-Medicaid/R_project_template/blob/main/.gitignore). This file tells git to track the _structure_ of the repository without tracking any individual _files_ in the trunk/ folder.
 
 ## Set up 
 
