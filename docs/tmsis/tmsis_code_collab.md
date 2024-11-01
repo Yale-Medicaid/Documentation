@@ -2,15 +2,19 @@
 
 We will use `git` to collaboratively develop analyses. The most up to date, stable, version of the libraries will be found in `/gpfs/milgram/pi/medicaid_lab/code/` on the main branch, while researcher specific development branches can be stored in your own project directory. 
 
-> ⚠️ Code will be pushed remotely to the Yale-Medicaid organization on GitHub. Repositories **must** be initialized with .gitignore files which ignore: 
-> 
-> - all common data file extensions (.parquet, .xlsx, .dta, .sas7bdat)
-> - files which display data for exploratory analyses (.ipynb)   
+
+!!! warning "Always include a .gitignore"
+
+	Code will be pushed remotely to the Yale-Medicaid organization on GitHub. Repositories **must** be initialized with .gitignore files which ignores:
+	
+	- all common data file extensions (.parquet, .xlsx, .dta, .sas7bdat)
+	- files which display data for exploratory analyses (.ipynb)  
 
 ## Set up 
+
 ### Quickstart for Git on Milgram
 
-<span style="color:#4781BE">**Generate SSH Key**</span>
+<span style="color:#4781BE">**Generating SSH Key**</span>
 
 This saves you from having to type your password or provide a token every time. YCRC provides a [thorough guide](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/) on using and generating SSH keys, the main steps are outlined here. If you've already generated SSH keys (say to SSH into Milgram through the terminal) you can skip the generation steps. 
 
@@ -43,7 +47,7 @@ Now you need to add that public key to your GitHub Account: [instructions are pr
 
 Now when you clone a repository you can use the SSH remote URL.
 
-
+---
 
 ### Existing Projects
 Navigate to the repository within Yale-Medicaid on Github. Click on the green `<> Code` button in the to right and copy the SSH url to your clipboard. 
@@ -77,6 +81,8 @@ git checkout -b NEW_BRANCH_NAME
 ```
 
 and you should get a message `Switched to a new branch 'NEW_BRANCH_NAME'`. Try to make the name descriptive if the branch is for a specific task, otherwise I used something general like `anthony-dev`. 
+
+---
 
 ### New Projects
 TODO
@@ -128,10 +134,12 @@ Alternatively, all changes to already tracked files can be commited with
 git commit -am "some commit message"
 ```
 
-> ⚠️ Remember to check the files being added and information being committed to ensure no sensitive information is pushed to the remote. 
-> 
-> - If using `-a` when committing, take the time to ensure you know exactly which files have changed as this commits `all` modifications. 
-> - I recommend against using a command like `git add -A` to add new files to tracking. Better to explicitly `git add file_name` as an added layer of security. (the .gitignore is a backstop...)
+!!! warning "Check before you commit"
+
+	Remember to check the files being added and information being committed to ensure no sensitive information is pushed to the remote. 
+	
+	  - If using `-a` when committing, take the time to ensure you know exactly which files have changed as this commits `all` modifications. 
+	  - I recommend against using a command like `git add -A` to add new files to tracking. Better to explicitly `git add file_name` as an added layer of security. (the .gitignore is a backstop...)
 
 Finally, committed changes can be pushed to the remote:
 

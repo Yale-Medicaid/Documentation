@@ -2,7 +2,7 @@ The [Python Packaging User Guide](https://packaging.python.org/en/latest/guides/
 
 ## Creating a New Virtual Environment
 
-To set up a virtual environment for a project you can navigate to the project folder (for instance `Anthony/NewProject/`) and activate GitBash. (For example, if using the file explorer, right click and select `GitBash Here`.) This will open GitBash and you should see the following:
+To set up a virtual environment for a project you can navigate to the project folder (for instance `Anthony/NewProject/`) and activate GitBash. (If using the file explorer, right click and select `GitBash Here`.) This will open GitBash and you should see the following:
 
 ```
 your_netID@ysph-hpm MINGW64 /d/Groups/YSPH-HPM-Ndumele/Networks/Anthony/NewProject
@@ -43,7 +43,7 @@ pip3 install ipykernel
 python -m ipykernel install --user --name=my_venv
 ```
 
-Then, you can open up a juptyer notebook within GitBash with `jupyter notebook`. Now when you create a new notebook you will be able to select this virtual environment when starting a new notebook:
+Then, open a juptyer notebook within GitBash with `jupyter notebook`. Now when you create a new notebook you will be able to select this virtual environment when starting a new notebook:
 
 ![Selecting an environment for a jupyter notebook](../../images/jupyter_venv.png){: style="height: 200px;width: 200px;display: block; margin: 0 auto"}
 

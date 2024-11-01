@@ -5,13 +5,13 @@ All Material is available on the **[Website](https://yale-medicaid.github.io/Doc
 ## Contributing
 If you'd like to contribute to the group's documentation you can install `mkdocs` which allows you to locally test changes before pushing and deploying the markdown and .yml files to GitHub Pages.
 
-You can use miniconda to create a separate, minimal environment
+From the terminal can use [miniconda](https://docs.anaconda.com/miniconda/) to create a separate minimal environment named "doc_env":
 
 ```
 conda create -n doc_env
 ```
 
-and then install mkdocs and mkdocs-materials here
+and install the required mkdocs and mkdocs-materials here:
 
 ```
 conda install -n doc_env conda-forge::mkdocs
@@ -30,7 +30,7 @@ Navigate to the local directory where the Documentation repository is saved and 
 mkdocs serve
 ```
 
-This will provide output with the last line indicating where the website is locally served, which can be opened in any web browser.
+This will provide output indicating any warnings or issues. The last line shows where the website is locally served, which can be opened in any web browser.
 
 ```
 INFO    -  [14:38:18] Serving on http://127.0.0.1:8000/
