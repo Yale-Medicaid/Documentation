@@ -50,6 +50,9 @@ Now when you clone a repository you can use the SSH remote URL.
 ---
 
 ### Existing Projects
+
+<span style="color:#4781BE">**Cloning the Repo**</span>
+
 Navigate to the repository within Yale-Medicaid on Github. Click on the green `<> Code` button in the to right and copy the SSH url to your clipboard. 
 
 ![SSH clone](../images/tmsis_ssh.png){: style="height: 345px;width: 895px;display: block; margin: 0 auto"}
@@ -82,12 +85,27 @@ git checkout -b NEW_BRANCH_NAME
 
 and you should get a message `Switched to a new branch 'NEW_BRANCH_NAME'`. Try to make the name descriptive if the branch is for a specific task, otherwise I used something general like `anthony-dev`. 
 
+<span style="color:#4781BE">**Replicating the environment**</span>
+
+The repository should have an `environment.yml` file which indicates the packages and exact versions required by the project. We need to ensure everyone is working with the same versions to avoid issues with depricated methods or changes between versions.
+
+You can replicate this environment using `miniconda`. Within Milgram navigate to the project directory and within a terminal:
+
+```
+module load miniconda
+conda env create --file environment.yml
+```
+
+This will create an environment with a name based on the `name:` attribute in the `environment.yml` file. You need to use this environment when you are testing changes. 
+
 ---
 
 ### New Projects
 TODO
 
 ## Contributing  
+
+<span style="color:#4781BE">**Git 101**</span>
 
 You can check the status of your current branch with 
 
@@ -146,3 +164,31 @@ Finally, committed changes can be pushed to the remote:
 ```
 git push
 ```
+
+<span style="color:#4781BE">**Updating environment.yml**</span>
+
+!!! note "Commit updates to environment.yml alongside code" 
+    
+    If you install or update a package then environment.yml **must** be updated in the same commit alongside the code which required the change. This ensures that the version history always has the correct environent capable of running the project without errors. 
+
+Occassionally you will need to add additional package dependencies or you will want to update packages to more recent versions. When this happens, you need to update `environment.yml` so others can maintain consistency. To do this, navigate to the project where `environment.yml` exists and within a terminal:
+
+```
+module load miniconda
+conda env export --no-builds --name ENV_NAME | grep -v prefix > environment.yml
+```
+
+where you replace `ENV_NAME` with the name of the environment you are looking to export. This will overwrite the `environment.yml` file, so you can commit any changes alongside the code and push to git. When others pull these changes, they can replicate this environment from the updated file. 
+
+```
+module load miniconda
+conda env create --file environment.yml
+```
+
+This will fail if the environment already exists locally, so instead update 
+
+```
+module load miniconda
+conda env update --file environment.yml --prune
+```
+ 
