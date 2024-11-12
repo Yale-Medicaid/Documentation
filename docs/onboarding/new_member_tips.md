@@ -22,8 +22,11 @@ The slide can be personalized and updated based on your needs. In this process, 
 	- Set a status to good (green), uncertain or behind schedule (yellow), or blocked (red).
 - **Feedback:** Being prepared to track action items or recs during the meeting.
 	- "Meeting Comments" column in the slide track notes in real time.
-- ***BONUS:*** When concrete tasks and timelines are decided during the meeting, we recommend summarizing and sending these the meeting participants afterward.
-	- This helps track decisions, and confirm understanding for the next steps.
+
+**After the Check-in**
+
+Shortly after a project check-in it's useful to send a message which lays out the concrete next steps and prioritization that came out of the meeting. This will help us track decisions, confirm understanding of the next steps and priorities, and will allow us to clarify anything we missed during the meeting. 
+
 
 ## Schedule Meetings
 
@@ -58,6 +61,7 @@ The slide can be personalized and updated based on your needs. In this process, 
 > Lab_Staff
 > 
 > ***Agenda***
+> 
 > - Review proposed edits
 > - Create timeline to finalize draft
 > - Delegate remaining tasks
@@ -108,6 +112,7 @@ The slide can be personalized and updated based on your needs. In this process, 
 > +++
 > 
 > *Problem details*
+> 
 > - **Issue #1:** The data processing pipeline is failing when I try to merge MCO extracts. Specifically, it’s this line (Github link) with an error: "..."
 > - **Issue #2:** Formatting in the raw MCO data extract ("file_path.csv") has paid dates with an undefined encoding, which keeps me from running a trend analysis. See a data example below.
 > (Table)
