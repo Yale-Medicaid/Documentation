@@ -15,7 +15,7 @@ import pandas as pd
 data_p = '/gpfs/milgram/pi/medicaid_lab/data/cms/ingested/TMSIS_taf/'
 file = 'taf_inpatient_header/year=2020/state=CA/data.parquet'
 
-df = pd.read_parquet(file)
+df = pd.read_parquet(data_p+file)
 
 df.info(memory_usage='deep')
 #memory usage: 6.4 GB
@@ -103,7 +103,7 @@ print(f'memory usage: {tbl.nbytes/10**9:.1f} GB')
 Now the data are small enough that we can also bring in more columns and easily manipulate it. 
 
 #### Simple Examples
-Both `pandas.read_parquet` and `pyarrow.read_table` support the same filtering. Filtering based on the following comparisons: `[==, =, >, >=, <, <=, !=, in, not in]` is achieved by providing a list of tuples which each tuple being `(column_name, comparison, value)`. 
+Both `pandas.read_parquet` and `pyarrow.parquet.read_table` support the same filtering. Filtering based on the following comparisons: `[==, =, >, >=, <, <=, !=, in, not in]` is achieved by providing a list of tuples which each tuple being `(column_name, comparison, value)`. 
 
 Below we filter to inpatient hosptial admissions for a delivery (diagnosis code Z3800)
 
