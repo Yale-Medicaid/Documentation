@@ -17,9 +17,6 @@ file = 'taf_inpatient_header/year=2020/state=CA/data.parquet'
 
 df = pd.read_parquet(file)
 
-print(df.shape)
-#(1348818, 158)
-
 df.info(memory_usage='deep')
 #memory usage: 6.4 GB
 ```
@@ -34,15 +31,12 @@ columns = (['BENE_ID', 'CLM_ID', 'SRVC_END_DT',
 
 df = pd.read_parquet(data_p+file, columns=columns)
 
-print(df.shape)
-#(1348818, 29)
-
 df.info(memory_usage='deep')
 #memory usage: 1.6 GB
 ```
 
 #### Arrow Tables
-Once the files become large enough the memory footprint of DataFrames can become problematic. Arrow tables have a much smaller footprint and can handle basic filtering and merging operations. This allows you to read in a larger amounts of data (comared with DataFrames) and perform merge or filtering operations to a point where it's practical to use `pandas` or `dyplr` for more sophisticated manipulations.
+Once the files become large enough the memory footprint of DataFrames can become problematic. Arrow tables have a much smaller footprint and can handle basic filtering and merging operations. This allows you to read in a larger amounts of data (compared with DataFrames) and perform merge or filtering operations to a point where it's practical to then use `pandas` or `dyplr` for more sophisticated manipulations.
 
 While the pandas DataFrame above had a 6.4 GB memory footprint, the comparable arrow table only takes up 1.3 GB.
 
@@ -96,7 +90,7 @@ tbl = pq.read_table(data_p+file)
 #memory usage: > 180 GB (OOM event kills it)
 ```
 
-However if we needed a specific subset of data — only emergency departments, defined by `POS_CD == '23'` — then we can add this to the read to greatly reduce the data. 
+If we only need a specific subset of data — e.g., only emergency departments, defined by `POS_CD == '23'` — then we can add this to the read to greatly reduce the data. 
 
 ```python
 tbl = pq.read_table(data_p+file,
@@ -135,7 +129,7 @@ tbl = pq.read_table(data_p+file,
                    )
 ```
 
-`OR` logic works by embedding separate lists within the `filters` list. For instance to include either deliveries (Z3800) or cesarean deliveries (Z3801) we would:
+`OR` logic works by embedding separate lists within the overall `filters` list. To include either deliveries (Z3800) OR cesarean deliveries (Z3801):
 
 ```python
 tbl = pq.read_table(data_p+file,
@@ -144,7 +138,7 @@ tbl = pq.read_table(data_p+file,
                              [('ADMTG_DGNS_CD', '==', 'Z3801')]  # Or C-Section
                             ])
                             
-# Equivalently, you would `in` for this.
+# Equivalently, you would really use `in` for this.
 tbl = pq.read_table(data_p+file,
                     filters=[('ADMTG_DGNS_CD', 'in', ['Z3800', 'Z3801'])]
                     )                                           
@@ -180,11 +174,11 @@ TODO
 ### Partition Strategy for Large Files
 
 #### Background
-In certain cases none of the above options work. For instance, if you need to create medical per-member-per-month spending by category in a state like California you'll need to read in the entire Other Services file and many of individual columns.
+In certain cases none of the above options work. If you need to create medical per-member-per-month spending by category in a state like California you'll need to read in the entire Other Services file and many of individual columns.
 
 In these cases we can impose further partitioning based on the last digit(s) of the scrambled `BENE_ID` column. This is quite a powerful "trick" because the following are true:
 
-- `BENE_ID` is already present and (almost) entirely non-missing in all files
+- `BENE_ID` is already present and (almost) entirely non-missing in all files.
 - `BENE_ID` is scambled so this evenly divides the data. 
 - Almost every analysis will link data _within_ a person not _across_ people. 
 
@@ -197,6 +191,6 @@ To expand on that last point, a typical scenario is merging line files with thei
     Still, in other cases `BENE_ID` may not be the right choice. If analyses happen across beneficiaries, say identifying members linked through a case (`MSIS_CASE_NUM`), then you could partition based on this field. As this field is not readily available in every file you'd need to map `BENE_ID` in each file to `MSIS_CASE_NUM` to respect that partitioning strategy.
     
 #### Code
- 
+TODO 
     
     
