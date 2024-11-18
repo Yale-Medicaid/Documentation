@@ -73,6 +73,8 @@ If you haven't used Arrow or the parquet format before, first read [Hadley Wickh
     
 	This often implies that you have not allocated enough memory to the task. You could start a new interactive session with more memory (the maximum is 30 GB per CPU core) or you can submit a job with SLURM.
 
+- You may have trouble installing R packages. You can try installing an older version from the CRAN archive, or you can try installing from R Universe.
+
 ## Useful SLURM Commands
 
 To submit a job, you'll need a [shell script that runs your code](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/slurm-examples/).
