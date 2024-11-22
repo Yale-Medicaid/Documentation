@@ -40,6 +40,8 @@ nav:
       - Working with File Sizes: tmsis/vignettes/working_with_file_sizes.md
       - Identifying ED Visits: tmsis/vignettes/identifying_ED_visits.md
       - Identifying Providers and Facilities: tmsis/vignettes/providers.md
+  - Embedding:
+    - Guidebook: embedding/guidebook.md
   - Project Links: project_links.md
 
 
