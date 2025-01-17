@@ -16,7 +16,6 @@ There are several administrative steps to getting started that you may complete 
         - Microsoft Remote Desktop
         - Slack 
         - Dropbox
-        - Asana
         - Zoom 
         
     - If these are not installed on your computer, or if there are other programs you need, e-mail Dan Holland and we can get ITS to install them on your computer. 

@@ -39,7 +39,7 @@ which will show a very long string beginning with something like `ssh-rsa `. Cop
 
 <span style="color:#4781BE">**Add SSH Key to GitHub**</span>
 
-Now you need to add that public key to your GitHub Account: [instructions are provided by GitHUb](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account).
+Now you need to add that public key to your GitHub Account: [instructions are provided by GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account).
 
 1. Click on your account icon
 2. Click on Settings

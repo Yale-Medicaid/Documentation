@@ -44,6 +44,21 @@ Then, choose your preferred OnDemand app and start coding! Most work at the lab 
 
 For most T-MSIS tasks, the interactive session has enough computing power to work on one year of data in a smaller state, e.g., South Dakota in 2018. When starting your session, you should be able to request six hours of one CPU core with 30 GB of RAM. When you want to run larger analyses, you'll need to [run a job with SLURM](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/).
 
+## Accessing storage@yale on Milgram
+
+Certain drives on storage@yale are also suitable for hisk-risk data and in rare cases we may need to transfer data between these. To connect to storage@yale on Milgram:
+
+- Begin a remote desktop session (Note: the file transfer will need to complete within the allotted time, you can reach out to YCRC to request a long session)
+- Open a file browser, click the pen and pencil icon next to the "Location" navigation, type `smb://storage.yale.edu/home/` and press enter
+- This should open a dialogue box:
+     - Select: registered user   
+     - ID: `your_NET_ID`
+     - Change SAMBA to YALE
+     - password is your normal netID password
+- Once you log in you should see the shares associated with your account 
+- You can open another file browser and "drag and drop" files between the two drives
+
+
 ## T-MSIS Tech Stack
 
 The [Documentation](tmsis_medicaid_data.md#documentation) section in the T-MSIS Medicaid Data page describes the T-MSIS data. After reading that, you'll want to familiarize yourself with the specific tech stack we use at the Medicaid lab.

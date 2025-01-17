@@ -15,7 +15,7 @@ We have Medicaid data for the following time periods:
 | 2018  |  Y           | Y            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
 | 2019  |  Y           | Y            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
 | 2020  |  Y           | Y            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
-| 2021  |  Y           | N            | |
+| 2021  |  Y           | N            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
 
 ## Data Organization
 
