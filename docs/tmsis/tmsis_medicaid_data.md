@@ -15,7 +15,7 @@ We have Medicaid data for the following time periods:
 | 2018  |  Y           | Y            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
 | 2019  |  Y           | Y            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
 | 2020  |  Y           | Y            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
-| 2021  |  Y           | N            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
+| 2021  |  Y           | Y            | Demo, Out, In, Oth, Rx, LTC, Plan, Prov |
 
 ## Data Organization
 
@@ -25,13 +25,7 @@ The starting point for most projects will be the year-by-state partitioned files
 
 ```
 TMSIS_taf/
-├── taf_demog_elig_base/
-├── taf_demog_elig_dates/
-├── taf_demog_elig_disability/
-├── taf_demog_elig_hh_spo/
-├── taf_demog_elig_mngd_care/
-├── taf_demog_elig_mny_flw_prsn/
-├── taf_demog_elig_waiver/
+├── taf_demog_elig_*/
 ├── taf_inpatient_header/
 ├── taf_inpatient_line/
 ├── taf_inpatient_occurrence/
@@ -42,7 +36,9 @@ TMSIS_taf/
 ├── taf_other_services_line/
 ├── taf_other_services_occurrence/
 ├── taf_rx_header/
-└── taf_rx_line/
+├── taf_rx_line/
+├── taf_mngd_care_plan_*/
+└── taf_prvdr_*/
 ```
 
 Within each specific file folder the organization is by state, then year:
@@ -66,7 +62,7 @@ taf_demog_elig_base/
 
 ## Documentation
 
-ResDAC provides extensive documentation for all of the files. We have maintained the original column names and datatypes, so all the documentation presented on this website applies to the standardized files as well as the raw files. Start by reading at least the few pages of the T-MSIS user guide, linked below. The two codebooks offer fantastic data dictionaries.
+ResDAC provides extensive documentation for all of the files. We have maintained the original column names and datatypes, so all the documentation presented on this website applies to the standardized files as well as the raw files. The two codebooks offer fantastic data dictionaries.
 
 Essential documentation:
 
@@ -81,4 +77,6 @@ Additional ResDAC documentation:
 * [Documentation for pharmacy files](https://resdac.org/cms-data/files/taf-rx)
 * [Documentation for other services files](https://resdac.org/cms-data/files/taf-ot)
 * [Documentation for long term care files](https://resdac.org/cms-data/files/taf-lt)
+* [Documentation for annual provider files](https://resdac.org/cms-data/files/taf-apr)
+* [Documentation for annual plan files](https://resdac.org/cms-data/files/taf-apl)
 * [Data Quality Atlas](https://www.medicaid.gov/dq-atlas/welcome)
