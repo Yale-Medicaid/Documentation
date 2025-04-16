@@ -44,6 +44,7 @@ nav:
       - Identifying Providers and Facilities: tmsis/vignettes/providers.md
   - Embedding:
     - Guidebook: embedding/guidebook.md
+    - Onboarding: embedding/onboarding.md
   - Project Links: project_links.md
 
 
