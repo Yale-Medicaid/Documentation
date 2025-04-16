@@ -18,7 +18,21 @@ The Connecticut DSS embedded portal is based out of an AVD instance. You must go
     - Go to "Connections > Add Workspace" and use the following URL: https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery
     - Use your state credentials (@ct.gov) to log in, including 2-factor authentication
 4. Reset your password
+    - Review password requirements in the section below
     - Directly from the VM display (Ctrl+Alt+Delete, or Ctrl+Opt+Delete on Mac)
     - Alternatively, try going to office.com in the browser, logging in with your state credentials, and selecting "Change password" from the settings icon
 
+## Password Requirements
+
+Connecticut DSS security requires the following password requirements:
+
+- Must be at least 9 characters long
+- Must contain at least one character in 3 of the following groups of characters:
+    - Uppercase letters (A-Z)
+    - Lowercase letters (a-z)
+    - Numbers (0-9)
+    - Symbols (!@#$%^&*)
+- Cannot match any of your previous 24 passwords
+- Avoid using single words that can be found in the dictionary (e.g., "Wintertime1!")
+- You cannot change your password more often than once in a 7-day period unless overridden by the helpdesk
 
