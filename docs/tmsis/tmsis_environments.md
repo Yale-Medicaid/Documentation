@@ -43,7 +43,7 @@ Once you no longer need to use that environment you can leave it with
 
 When developing code it can be useful to work in an interactive session, but it's important that the environment used in the interactive session is the same one used in your analysis. 
 
-In a terminal (where you have no yet loaded miniconda) type `ycrc_conda_env_.sh update` 
+In a terminal (where you have no yet loaded miniconda) type `ycrc_conda_env.sh update` 
 
 Once this is done, you should be able to select the environment in the dropdown setup when starting an interactive jupyter session.
 
