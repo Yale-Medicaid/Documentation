@@ -21,6 +21,7 @@ The Connecticut DSS embedded portal is based out of an AVD instance. You must go
     - Review password requirements in the section below
     - Directly from the VM display (Ctrl+Alt+Delete, or Ctrl+Opt+Delete on Mac)
     - Alternatively, try going to office.com in the browser, logging in with your state credentials, and selecting "Change password" from the settings icon
+5. In the AVD File Explorer, go to the 'DSS-Yale-Share/' folder in the shared network drive: `\\stavddss001.file.core.windows.net\dss-yale-share-001`
 
 ## Password Requirements
 
