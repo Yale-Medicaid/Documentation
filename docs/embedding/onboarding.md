@@ -23,7 +23,9 @@ The Connecticut DSS embedded portal is based out of an AVD instance. You must go
     - Alternatively, try going to office.com in the browser, logging in with your state credentials, and selecting "Change password" from the settings icon
 5. In the AVD File Explorer, go to the 'DSS-Yale-Share/' folder in the shared network drive: `\\stavddss001.file.core.windows.net\dss-yale-share-001`
 
-## Password Requirements
+## DSS Password Requirements
+
+The following info is specific to your DSS log-in account. Other credentials (e.g., database passwords) are managed separately.
 
 Connecticut DSS security requires the following password requirements:
 
@@ -36,4 +38,21 @@ Connecticut DSS security requires the following password requirements:
 - Cannot match any of your previous 24 passwords
 - Avoid using single words that can be found in the dictionary (e.g., "Wintertime1!")
 - You cannot change your password more often than once in a 7-day period unless overridden by the helpdesk
+
+## Oracle Password Change
+
+**If you are locked out, reach out to DSS IT and request Gainwell support to unlock your MDW credentials.**
+
+Changing your Oracle database password for the Medicaid Data Warehouse (MDW) can be done within any SQL editor, such as DBeaver. However, this requires setting the connection using *only* your username and excluding the `[YALE]` suffix, which is used to connect to the shared schema.
+
+For example, the following workflow may be performed in DBeaver with an existing connection:
+
+- Right-click on the Oracle connection
+- Edit connection, changing the username to exclude the `[YALE]` suffix
+- Save the edited connection, then right-click on the connection again
+- Select "Security" > "Change user password"
+- Edit connection, updating both the password and resetting the username to include `[YALE]` again
+- Test connection and save updated credentials
+
+Your updated password should persist all Oracle connections, regardless of other connections (e.g., RStudio or Python). Make sure you keep a secure record of your passwords for tracking.
 
