@@ -48,10 +48,10 @@ Changing your Oracle database password for the Medicaid Data Warehouse (MDW) can
 For example, the following workflow may be performed in DBeaver with an existing connection:
 
 - Right-click on the Oracle connection
-- Edit connection, changing the username to exclude the `[YALE]` suffix
-- Save the edited connection, then right-click on the connection again
-- Select "Security" > "Change user password"
-- Edit connection, updating both the password and resetting the username to include `[YALE]` again
+- Click "edit connection," changing the username to exclude the `[YALE]` suffix
+- Save the edited connection, then right-click on the connection again (don't click "edit connection" this time)
+- Select "Security" > "Change user password." Click save
+- Right-click on the connection, click "edit connnection," update the password, and reset the username to include `[YALE]` again
 - Test connection and save updated credentials
 
 Your updated password should persist all Oracle connections, regardless of other connections (e.g., RStudio or Python). Make sure you keep a secure record of your passwords for tracking.
