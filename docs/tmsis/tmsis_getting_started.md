@@ -32,9 +32,14 @@ You'll probably want to peruse the Medicaid lab files. Open OnDemand, then click
 
 !!! warning "Don't download files"
 
-    It's easy—too easy—to accidentally download a file in the explorer. T-MSIS data are only allowed to live on Milgram, so do not download them. Furthermore, don't download any files with information that could possibly recreate individual-level claims data.
+    It's easy—too easy—to accidentally begin downloading a file in the explorer. T-MSIS data are only allowed to live on Milgram, so do not download them. Furthermore, don't download any files with information that could possibly recreate, or expose, individual-level claims data. 
+    
+    ALWAYS double check jupyter notebooks, log files, error messages, or other exploratory output to ensure there is no individual data being displayed before sharing beyond Milgram.
+    
+    Only connect to Milgram on your official Yale Laptop. These are HIPAA compliant and encrypted as an additional layer of protection if a file download is ever initiated.
+    
 
-To make it a bit harder to download files, you can use the Remote Desktop app. The interface isn't as nice, but it's good to be careful.
+You can also use the Remote Desktop app to explore files. The interface isn't as nice, but it's good to be careful.
 
 ### Coding
 
