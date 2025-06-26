@@ -1,6 +1,6 @@
 # Working with File Sizes
 
-T-MSIS TAF data are large and at the start of the project it can be overwhelming and technically challenging to manipulate the data. The data are already organized into more manageable state x year paritions, but larger states (CA, NY, TX) and larger files (Other Services) still exceed hundreds of GB, if not TB, when read into memory — the `.parquet` files are highly compressed and can be 1-2 orders of magitude off of the true in memory footprint. 
+T-MSIS TAF data are large and at the start of the project it can be overwhelming and technically challenging to manipulate the data. The data are already organized into more manageable state x year partitions, but larger states (CA, NY, TX) and larger files (Other Services) still exceed hundreds of GB, if not TB, when read into memory — the `.parquet` files are highly compressed and can be 1-2 orders of magnitude off of the true in memory footprint. 
 
 Below we provide some tips and worked examples that will help get a project started before data are subset to a more manageable size. 
 
@@ -21,7 +21,7 @@ df.info(memory_usage='deep')
 #memory usage: 6.4 GB
 ```
 
-While this can be helpful for initial exploratory analyses once you have a better sense of the types of analyses and relevant data you should use the `columns` argument to read in only the relevant data. Because `.parquet` files are column-organized this can be done efficiently. Below we'll read in the standard inportant claims information (Date, ID, Member) as well as the diagnosis information (admitting diagnosis + 12 potential diagnosis columns). The result is a much smaller DataFrame that only takes up 1/4 of the previous memory requirement. 
+While this can be helpful for initial exploratory analyses once you have a better sense of the types of analyses and relevant data you should use the `columns` argument to read in only the relevant data. Because `.parquet` files are column-organized this can be done efficiently. Below we'll read in the standard important claims information (Date, ID, Member) as well as the diagnosis information (admitting diagnosis + 12 potential diagnosis columns). The result is a much smaller DataFrame that only takes up 1/4 of the previous memory requirement. 
 
 ```python
 columns = (['BENE_ID', 'CLM_ID', 'SRVC_END_DT', 
@@ -53,7 +53,7 @@ print(f'memory usage: {tbl.nbytes/10**9:.1f} GB')
 #memory usage: 1.3 GB
 ```
 
-Arrow also support a `columns` argument and now the table subset to diagnosis information barely takes up 300 MB:
+Arrow also supports a `columns` argument and now the table subset to diagnosis information barely takes up 300 MB:
 
 ```python
 tbl = pq.read_table(data_p+file, columns=columns)
@@ -105,7 +105,7 @@ Now the data are small enough that we can also bring in more columns and easily 
 #### Simple Examples
 Both `pandas.read_parquet` and `pyarrow.parquet.read_table` support the same filtering. Filtering based on the following comparisons: `[==, =, >, >=, <, <=, !=, in, not in]` is achieved by providing a list of tuples which each tuple being `(column_name, comparison, value)`. 
 
-Below we filter to inpatient hosptial admissions for a delivery (diagnosis code Z3800)
+Below we filter to inpatient hospital admissions for a delivery (diagnosis code Z3800)
 
 ```python
 import pandas as pd
@@ -179,7 +179,7 @@ In certain cases none of the above options work. If you need to create medical p
 In these cases we can impose further partitioning based on the last digit(s) of the scrambled `BENE_ID` column. This is quite a powerful "trick" because the following are true:
 
 - `BENE_ID` is already present and (almost) entirely non-missing in all files.
-- `BENE_ID` is scambled so this evenly divides the data. 
+- `BENE_ID` is scrambled so this evenly divides the data. 
 - Almost every analysis will link data _within_ a person not _across_ people. 
 
 To expand on that last point, a typical scenario is merging line files with their corresponding header file with a join on `CLM_ID`. If headers and lines are randomly partitioned then we still need to compare each header partition with every line partition since we don't know where the matches will occur. However, because claims are unique to a single person, if we partition the header files (based on the last character of `BENE_ID`) then we know we only need to compare the header partition that ends with `'A'` to the line partition that ends with `'A'` (claims for different people by definition have different `CLM_ID` values).

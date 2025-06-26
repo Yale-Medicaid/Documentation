@@ -42,6 +42,7 @@ nav:
     - Collaborating on Code: tmsis/tmsis_code_collab.md
     - Vignettes:
       - Working with File Sizes: tmsis/vignettes/working_with_file_sizes.md
+      - Identifying Enrollment & Duals: tmsis/vignettes/enrollment.md
       - Identifying ED Visits: tmsis/vignettes/identifying_ED_visits.md
       - Identifying Providers and Facilities: tmsis/vignettes/providers.md
   - CT DSS Embedded Materials:
