@@ -19,7 +19,7 @@ We have Medicaid data for the following time periods:
 
 ## Data Organization
 
-T-MSIS data initially come as ~TB files broken up into several parts. We have partioned the files by year and by state to allow for more manageable chunks of data to be used for initial exploration. The clusters can then scale any analyses to a national level. 
+T-MSIS data initially come as ~1 TB files broken up into several parts. We have partioned the files by year and by state to allow for more manageable chunks of data to be used for initial exploration. The clusters can then scale any analyses to a national level. 
 
 The starting point for most projects will be the year-by-state partitioned files, located at `/gpfs/milgram/pi/medicaid_lab/data/cms/ingested/TMSIS_TAF/`. Within this directory there is a folder for each specific file provided by CMS:
 

@@ -3,7 +3,7 @@
 ## Obtaining Access to T-MSIS Data
 Due to the size and nature of the national data set, T-MSIS data are housed in the HIPAA-aligned [Milgram cluster](https://docs.ycrc.yale.edu/clusters/milgram/) at Yale Center for Research Computing. The first step is to [request an account](https://research.computing.yale.edu/support/hpc/account-request).
 
-1. Make sure Anthony is aware you are requesting an account he will need to approve the request.
+1. Make sure Anthony is aware you are requesting an account as he will need to approve the request.
 2. Fill out the form
 	- Department or School: Yale School of Public Health
 	- Are you a Principal Investigator: No
@@ -47,11 +47,11 @@ Start your first project as a subfolder in `/home/your_net_id/project/`. Keep in
 
 Then, choose your preferred OnDemand app and start coding! Most work at the lab is conducted in R (use RStudio Server) or Python (use Jupyter).
 
-For most T-MSIS tasks, the interactive session has enough computing power to work on one year of data in a smaller state, e.g., South Dakota in 2018. When starting your session, you should be able to request six hours of one CPU core with 30 GB of RAM. When you want to run larger analyses, you'll need to [run a job with SLURM](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/).
+For most T-MSIS tasks, the interactive session has enough computing power to work on one year of data in a smaller state, e.g., South Dakota in 2018. When starting your session, you should be able to request six hours of one CPU core with 30 GB of RAM. You can request OnDemand sessions with more cores and/or memory if you use the `day` or `week` partition. When you want to run your production analyses, you should [submit a job with SLURM](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/).
 
 ## Accessing storage@yale on Milgram
 
-Certain drives on storage@yale are also suitable for hisk-risk data and in rare cases we may need to transfer data between these. To connect to storage@yale on Milgram:
+Certain drives on storage@yale are also suitable for hisk-risk data, and in rare cases we may need to transfer data between these. To connect to storage@yale on Milgram:
 
 - Begin a remote desktop session (Note: the file transfer will need to complete within the allotted time, you can reach out to YCRC to request a long session)
 - Open a file browser, click the pen and pencil icon next to the "Location" navigation, type `smb://storage.yale.edu/home/` and press enter
@@ -91,9 +91,9 @@ If you haven't used Arrow or the parquet format before, first read [Hadley Wickh
 	Error in `get_result(output = out, options)`: ! callr subprocess failed: could not start R, exited with non-zero status, has crashed or was killed ℹ See `$stderr` for standard error.
 	```
     
-	This often implies that you have not allocated enough memory to the task. You could start a new interactive session with more memory (the maximum is 30 GB per CPU core) or you can submit a job with SLURM.
+	This often implies that you have not allocated enough memory to the task. You could start a new interactive session with more memory or you can submit a job with SLURM.
 
-- You may have trouble installing R packages. You can try installing an older version from the CRAN archive, or you can try installing from R Universe.
+- You may have trouble installing R packages. You can try [installing an older version](https://stackoverflow.com/questions/17082341/how-to-downgrade-an-r-package-by-installing-an-older-version) from the CRAN archive, or you can try installing from R Universe.
 
 ## Useful SLURM Commands
 

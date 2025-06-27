@@ -6,8 +6,11 @@ Environments are nothing more than a list of specific packages used to perform s
 
 R and Python can handle environments differently. For python the easist way to manage an environment is through the `miniconda` module. 
 
+## Creating Environments in R
 
-## Creating environments in python 
+This should be pretty straightforward. You should request an RStudio Server Session via the OnDemand portal. More information is available on the [YCRC website](https://docs.ycrc.yale.edu/clusters-at-yale/guides/r/).
+
+## Creating Environments in Python 
 
 ###<span style="color:#4781BE">**Environment Setup**</span>
 
@@ -43,12 +46,8 @@ Once you no longer need to use that environment you can leave it with
 
 When developing code it can be useful to work in an interactive session, but it's important that the environment used in the interactive session is the same one used in your analysis. 
 
-In a terminal (where you have no yet loaded miniconda) type `ycrc_conda_env.sh update` 
+In a terminal (where you have no yet loaded miniconda) type `ycrc_conda_env.sh update`.
 
 Once this is done, you should be able to select the environment in the dropdown setup when starting an interactive jupyter session.
 
  ![Selecting a Jupyter environment](../images/jupyter_venv_update.png){: style="height: 200px;width: 600px;display: block; margin: 0 auto"}
-    
-    
-
-
