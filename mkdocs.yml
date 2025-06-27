@@ -24,7 +24,7 @@ nav:
     - New Member Onboarding: onboarding/new_member_onboarding.md
     - New Member Tips: onboarding/new_member_tips.md
     - Data and Systems Overview: data_science/data_and_systems.md
-  - Data Science:
+  - Data Science Best Practices:
     - Project Organization: data_science/project_organization.md
     - Coding Conventions: data_science/coding_conventions.md
     - Open Data Resources: data_science/open_data_resources.md

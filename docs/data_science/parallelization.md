@@ -71,10 +71,10 @@ Finally, make sure all of these files (`my_script.py`, `joblist.txt`, and `dsq_j
 
 If you need more customization or run into errors, [YCRC](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/dsq/) has some great suggestions of how to start and diagnose.
 
-Note: Unfortunately, there is not a way to customize how much memory each job gets, meaning if you run all states in one script you'd have to assign CA and HI the same amount of memory.  One potential workaround is to create multiple scripts - a "big state" and "small state" script for example.
+Note: Unfortunately, there is not a way to customize how much memory each job gets, meaning if you run all states in one script you'd have to assign CA and HI the same amount of memory.  One potential workaround is to create multiple scripts — a "big state" and "small state" script, for example.
 
 ## Another Example
-Below is the group of files I made to run a very simple function that imports the demographic file and reports the number of unique `BENE_ID`s.  This runs for 5 states but obviously could be run for more.
+Below is the group of files I made to run a very simple function that imports the demographic file and reports the number of unique `BENE_ID`s.  This implementation is for five states, but obviously could be run for more.
 `parallel_test.py`
 ```python
 import pyarrow.parquet as pq
@@ -124,3 +124,7 @@ The following batch script is made using the following prompt:
 # DO NOT EDIT LINE BELOW
 /gpfs/milgram/apps/hpc.rhel7/software/dSQ/1.05/dSQBatch.py --job-file /gpfs/milgram/project/ndumele/as4765/misc/joblist_parallel_test.txt --status-dir /gpfs/milgram/project/ndumele/as4765/misc
 ```
+
+## Considerations in R
+
+The theory behind parallel processing is the same in R, but the tools are different. The developers of `purrr` are working on a function `purrr::in_parallel()` to facilitate parallelization of loops. In the meantime, you can use the [`furrr` package](https://furrr.futureverse.org). If you're building a `targets` pipeline, follow their [parallelization guide](https://books.ropensci.org/targets/performance.html#distributed-computing).
