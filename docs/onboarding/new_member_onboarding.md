@@ -2,7 +2,7 @@
 
 Welcome to the SCALE (State Collaborations to Advance LEarning) in Medicaid Lab! We're excited to have you on the team and look forward to working with you on the problems that matter most to the Medicaid program. This page provides all the resources you need to get up and running on our projects, understand our workflow, and learn about how we build and deploy software!
 
-## Administrative steps
+## Administrative Steps
 There are several administrative steps to getting started that you may complete before you start:
 
 1. Get your Yale netID and e-mail set up.
@@ -31,7 +31,7 @@ There are several administrative steps to getting started that you may complete 
 1. Reach out to Anthony to make sure you are part of the YML Google Drive folder and relevant Dropbox folders. 
 1. Set up a weekly 1:1 with Anthony. 
 
-## Getting to know the team and projects
+## Getting to Know the Team and Projects
 1. If you aren't familiar with the basics of the Medicaid program review [this](https://www.kff.org/medicaid/fact-sheet/medicaid-pocket-primer). Ask Anthony for additional resources if you would like more to read.
 1. Meet with Jacob and Chima to discuss the projects you'll be working on, why they're important, and what your role will be.
 1. Meet with Anthony to get an overview of the data science and engineering work that has been done to date and where your work will fit in.
