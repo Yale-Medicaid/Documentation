@@ -30,6 +30,8 @@ Navigate to the local directory where the Documentation repository is saved and 
 mkdocs serve
 ```
 
+If that doesn't work, try typing `python3 -m mkdocs serve`.
+
 This will provide output indicating any warnings or issues. The last line shows where the website is locally served, which can be opened in any web browser.
 
 ```
