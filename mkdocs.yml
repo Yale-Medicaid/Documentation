@@ -26,16 +26,17 @@ nav:
   - Data Science:
     - Data and Systems: data_science/data_and_systems.md
     - Project Organization: data_science/project_organization.md
-    - Coding Conventions: data_science/coding_conventions.md 
+    - Coding Conventions: data_science/coding_conventions.md
     - Open Data Resources: data_science/open_data_resources.md
-  - State Medicaid Data: 
+    - Parallelization: data_science/parallelization.md
+  - State Medicaid Data:
     - State Medicaid Data Overview: state_data/state_medicaid_data.md
     - Working on the Yale Server: state_data/server_connect.md
-    - Virtual Environments: 
+    - Virtual Environments:
       - Overview: state_data/venv/venv_overview.md
       - Python Virtual Environments: state_data/venv/py_venv.md
       - R Virtual Environments: state_data/venv/r_venv.md
-  - T-MSIS: 
+  - T-MSIS:
     - T-MSIS Overview: tmsis/tmsis_medicaid_data.md
     - Working on Milgram: tmsis/tmsis_getting_started.md
     - R & Python Environments: tmsis/tmsis_environments.md

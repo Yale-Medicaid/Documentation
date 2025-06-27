@@ -1,4 +1,4 @@
-
+# Parallelization using dSQ
 ## Overview
 
 Parallelization is helpful when you need to run a time/memory intensive script many times or over many states.  Parallelization helps run multiple states at the same time to make code run quicker and more efficiently.  In this document, I will show how to convert a typical python script that loops over states into something that can be run in parallel.
