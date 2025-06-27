@@ -29,13 +29,13 @@ nav:
     - Coding Conventions: data_science/coding_conventions.md
     - Open Data Resources: data_science/open_data_resources.md
     - Parallelization: data_science/parallelization.md
-  - State Medicaid Data:
-    - State Medicaid Data Overview: state_data/state_medicaid_data.md
-    - Working on the Yale Server: state_data/server_connect.md
     - Virtual Environments:
       - Overview: state_data/venv/venv_overview.md
       - Python Virtual Environments: state_data/venv/py_venv.md
       - R Virtual Environments: state_data/venv/r_venv.md
+  - State Medicaid Data:
+    - State Medicaid Data Overview: state_data/state_medicaid_data.md
+    - Working on the Yale Server: state_data/server_connect.md
   - T-MSIS:
     - T-MSIS Overview: tmsis/tmsis_medicaid_data.md
     - Working on Milgram: tmsis/tmsis_getting_started.md
