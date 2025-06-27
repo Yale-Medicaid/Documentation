@@ -122,3 +122,6 @@ Shortly after a project check-in, it's useful to send participants a message whi
 > - **Issue #2:** Formatting in the raw MCO data extract ("file_path.csv") has paid dates with an undefined encoding, which keeps me from running a trend analysis. See a data example below.
 > (Table)
 
+## Seeking Additional Advice
+
+Current lab members are here to help. If you have further questions about how the lab operates, don't hesitate to ask.
