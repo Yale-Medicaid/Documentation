@@ -2,7 +2,7 @@
 
 ## Overview
 
-We have Medicaid data for the following states:
+We have Medicaid data extracts from the following states:
 
 | State          |     Years    | SNAP  |
 | :------------- | :----------: | :---: |

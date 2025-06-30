@@ -1,6 +1,6 @@
 # SCALE Medicaid Onboarding and Data Science Documentation
 
-All Material is available on the **[Website](https://yale-medicaid.github.io/Documentation/)**.
+All material is available on the **[website](https://yale-medicaid.github.io/Documentation/)**.
 
 ## Contributing
 If you'd like to contribute to the group's documentation you can install `mkdocs` which allows you to locally test changes before pushing and deploying the markdown and .yml files to GitHub Pages.
@@ -29,6 +29,8 @@ Navigate to the local directory where the Documentation repository is saved and 
 ```
 mkdocs serve
 ```
+
+If that doesn't work, try typing `python3 -m mkdocs serve`.
 
 This will provide output indicating any warnings or issues. The last line shows where the website is locally served, which can be opened in any web browser.
 

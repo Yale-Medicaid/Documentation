@@ -23,32 +23,33 @@ nav:
   - Onboarding:
     - New Member Onboarding: onboarding/new_member_onboarding.md
     - New Member Tips: onboarding/new_member_tips.md
-  - Data Science:
-    - Data and Systems: data_science/data_and_systems.md
+    - Data and Systems Overview: data_science/data_and_systems.md
+  - Data Science Practices:
     - Project Organization: data_science/project_organization.md
     - Coding Conventions: data_science/coding_conventions.md
     - Open Data Resources: data_science/open_data_resources.md
     - Parallelization: data_science/parallelization.md
-  - State Medicaid Data:
-    - State Medicaid Data Overview: state_data/state_medicaid_data.md
-    - Working on the Yale Server: state_data/server_connect.md
     - Virtual Environments:
       - Overview: state_data/venv/venv_overview.md
       - Python Virtual Environments: state_data/venv/py_venv.md
       - R Virtual Environments: state_data/venv/r_venv.md
+  - State Medicaid Data:
+    - State Medicaid Data Overview: state_data/state_medicaid_data.md
+    - Working on the Yale Server: state_data/server_connect.md
   - T-MSIS:
     - T-MSIS Overview: tmsis/tmsis_medicaid_data.md
     - Working on Milgram: tmsis/tmsis_getting_started.md
-    - R & Python Environments: tmsis/tmsis_environments.md
     - Collaborating on Code: tmsis/tmsis_code_collab.md
+    - R & Python Environments: tmsis/tmsis_environments.md
     - Vignettes:
       - Working with File Sizes: tmsis/vignettes/working_with_file_sizes.md
       - Identifying Enrollment & Duals: tmsis/vignettes/enrollment.md
       - Identifying ED Visits: tmsis/vignettes/identifying_ED_visits.md
       - Identifying Providers and Facilities: tmsis/vignettes/providers.md
+      - Working in R: tmsis/vignettes/working_in_R.md
   - CT DSS Embedded Materials:
-    - Guidebook: embedding/guidebook.md
     - Onboarding: embedding/onboarding.md
+    - Guidebook: embedding/guidebook.md
   - Research Areas: research_areas.md
 
 

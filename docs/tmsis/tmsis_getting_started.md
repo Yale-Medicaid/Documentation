@@ -3,7 +3,7 @@
 ## Obtaining Access to T-MSIS Data
 Due to the size and nature of the national data set, T-MSIS data are housed in the HIPAA-aligned [Milgram cluster](https://docs.ycrc.yale.edu/clusters/milgram/) at Yale Center for Research Computing. The first step is to [request an account](https://research.computing.yale.edu/support/hpc/account-request).
 
-1. Make sure Anthony is aware you are requesting an account he will need to approve the request.
+1. Make sure Anthony is aware you are requesting an account as he will need to approve the request.
 2. Fill out the form
 	- Department or School: Yale School of Public Health
 	- Are you a Principal Investigator: No
@@ -20,11 +20,11 @@ There are three ways you'll regularly interact with Milgram.
 
 ### Terminal
 
-You'll use the terminal to run larger jobs and perhaps to explore files. You can open the terminal in a Remote Desktop on Milgram OnDemand, or you can [set up an SSH connection](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/) from your machine. We highly recommend the latter.
+You'll use the terminal to run larger jobs and perhaps to explore files. You can open the terminal by clicking "clusters" and "Milgram shell access" in the OnDemand browser, by opening a Remote Desktop on Milgram OnDemand, or by [setting up an SSH connection](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/) from your machine.
 
 Open the terminal (however you choose) and type `groups`. You should see `medicaid`; if you don't try typing `groups your_net_id`. If you still don't see `medicaid`, your request for access was not honored and you should contact Anthony. You won't have access to the Medicaid data until your permissions are updated.
 
-To make your life easier, you may want to add a symlink at your home directory to the `medicaid_lab` folder. You can do this by typing `ln -s /gpfs/milgram/pi/medicaid_lab /home/your_net_id`. This isn't necessary but may be helpful.
+To make your life easier, you may want to add a symlink at your home directory to the `medicaid_lab` folder. You can do this by typing `ln -s /gpfs/milgram/pi/medicaid_lab /home/your_net_id` (replace `your_net_id`!). This isn't necessary but may be helpful.
 
 ### File Explorer
 
@@ -47,11 +47,11 @@ Start your first project as a subfolder in `/home/your_net_id/project/`. Keep in
 
 Then, choose your preferred OnDemand app and start coding! Most work at the lab is conducted in R (use RStudio Server) or Python (use Jupyter).
 
-For most T-MSIS tasks, the interactive session has enough computing power to work on one year of data in a smaller state, e.g., South Dakota in 2018. When starting your session, you should be able to request six hours of one CPU core with 30 GB of RAM. When you want to run larger analyses, you'll need to [run a job with SLURM](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/).
+For most T-MSIS tasks, the interactive session has enough computing power to work on one year of data in a smaller state, e.g., South Dakota in 2018. When starting your session, you should be able to request six hours of one CPU core with 30 GB of RAM. You can request OnDemand sessions with more cores and/or memory if you use the `day` or `week` partition. When you want to run your production analyses, you should [submit a job with SLURM](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/).
 
 ## Accessing storage@yale on Milgram
 
-Certain drives on storage@yale are also suitable for hisk-risk data and in rare cases we may need to transfer data between these. To connect to storage@yale on Milgram:
+Certain drives on storage@yale are also suitable for hisk-risk data, and in rare cases we may need to transfer data between these. To connect to storage@yale on Milgram:
 
 - Begin a remote desktop session (Note: the file transfer will need to complete within the allotted time, you can reach out to YCRC to request a long session)
 - Open a file browser, click the pen and pencil icon next to the "Location" navigation, type `smb://storage.yale.edu/home/` and press enter
@@ -91,9 +91,9 @@ If you haven't used Arrow or the parquet format before, first read [Hadley Wickh
 	Error in `get_result(output = out, options)`: ! callr subprocess failed: could not start R, exited with non-zero status, has crashed or was killed ℹ See `$stderr` for standard error.
 	```
     
-	This often implies that you have not allocated enough memory to the task. You could start a new interactive session with more memory (the maximum is 30 GB per CPU core) or you can submit a job with SLURM.
+	This often implies that you have not allocated enough memory to the task. You could start a new interactive session with more memory or you can submit a job with SLURM.
 
-- You may have trouble installing R packages. You can try installing an older version from the CRAN archive, or you can try installing from R Universe.
+- You may have trouble installing R packages. You can try [installing an older version](https://stackoverflow.com/questions/17082341/how-to-downgrade-an-r-package-by-installing-an-older-version) from the CRAN archive, or you can try installing from R Universe.
 
 ## Useful SLURM Commands
 
@@ -103,13 +103,17 @@ You'll generally submit batch jobs using the terminal. `cd` to the folder with t
 
 Most jobs should start immediately. If you still haven't received that "job started" email, you're probably in the queue. This is usually a result of you requesting a lot of resources _and_ many other users running their own computationally expensive tasks.
 
-First, run `squeue --me` to make sure your job went through.
+First, run `squeue --me` to make sure your job went through. You should see `(Resources)` in the right-most column, which indicates that your job is waiting on compute or memory availability.
 
 Then, run `squeue -p [partition_name]` to see who else is using Milgram. (`partition_name` can be `day`, `week`, etc.) Check the [Milgram user guide](https://docs.ycrc.yale.edu/clusters/milgram/) to see the total available compute nodes. If you sum up the existing jobs, you'll probably see that your job would fall over the limits.
 
-You can cancel a job with `scancel [job_id]`. The cluster will tell you your `job_id` when you submit it, and you can also find it in your queue.
+You can cancel a job if necessary with `scancel [job_id]`. The cluster will tell you your `job_id` when you submit it, and you can also find it in your queue.
 
 ### Finding Available Resources
+
+If your job is stuck in queue, the first thing to consider is if you really need all the resources you requested. If you don't have any [parallelization](../data_science/parallelization.md) in your code, you probably only need one core. Similarly, if you're not working with large datasets, you shouldn't need 181 GB of memory. Requesting only what you need helps you get your job running sooner and is [considerate](https://research.computing.yale.edu/services/support-high-performance-computing/hpc-policies#Compute) of others on the cluster.
+
+Need what you requested? You might be stuck waiting. If you can reduce your request, continue reading.
 
 !!! warning "Some guesswork"
 
