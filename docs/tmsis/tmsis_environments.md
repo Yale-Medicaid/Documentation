@@ -12,7 +12,7 @@ This should be pretty straightforward. You should request an RStudio Server Sess
 
 ## Creating Environments in Python 
 
-###<span style="color:#4781BE">**Environment Setup**</span>
+### Environment Setup
 
 I recommend setting up environments using the terminal in the remote desktop interactive app. While this can be done via SSH, `miniconda` sometimes hangs when solving the environment via ssh. 
 
@@ -38,11 +38,9 @@ Now we can install pacakges:
 
 ```conda install numpy matplotlib scipy jupyter pandas pyarrow```
 
-Once you no longer need to use that environment you can leave it with 
+Once you no longer need to use that environment you can leave it with `conda deactivate`.
 
-`conda deactivate`
-
-###<span style="color:#4781BE">**Adding Environment to Interactive Jupyter App**</span>
+### Adding Environment to Interactive Jupyter App
 
 When developing code it can be useful to work in an interactive session, but it's important that the environment used in the interactive session is the same one used in your analysis. 
 
