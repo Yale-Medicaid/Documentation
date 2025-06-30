@@ -173,13 +173,6 @@ print(df.groupby('ADMTG_DGNS_CD').SRVC_END_DT.agg(['min', 'max']))
 TODO
 
 ### Partition Strategy for Large Files
-
-If you try to join excessively large files, you might run out of memory, and Arrow will spit an error about your "key" data exceeding the limit. Some thoughtful preprocessing can alleviate this concern.
-
-Suppose you are joining other services header and line files by claim ID. Large states — such as California — will exceed the limit on key size. You can pre-partition the header and line files by the last (hex) character of the claim ID, then run 16 separate joins — because we are joining on the claim ID, all relevant rows will be in the same partition! Though this will take longer (the partitioning step alone can take many hours) you'll be able to complete the join with few changes to your code. (You can find the partitioned other services files at `/gpfs/milgram/pi/medicaid_lab/data/cms/ingested/TMSIS_super_partitions`.)
-
-In general, think of ways to systematically reduce the size of your joins. If you're joining on beneficiary ID, consider partitioning your files by the last character of the beneficiary ID. Be mindful that each additional partition will take a while to run.
-
 #### Background
 In certain cases none of the above options work. If you need to create medical per-member-per-month spending by category in a state like California you'll need to read in the entire Other Services file and many of individual columns.
 
@@ -196,6 +189,8 @@ To expand on that last point, a typical scenario is merging line files with thei
     In the above example, you might be thinking "why partition on `BENE_ID` when you could partition on `CLM_ID`", which is the merge key and _guarantees_ the joins happen within partition. That would also be a perfectly fine strategy, though in practice we often perform multiple merges or have more complicated join conditions. If in addition to merging header and line files, you'd also like to bring over demographic and eligibility data, then `BENE_ID` becomes an obvious choice for a partition which guarantees the within-partition relationship between data. 
     
     Still, in other cases `BENE_ID` may not be the right choice. If analyses happen across beneficiaries, say identifying members linked through a case (`MSIS_CASE_NUM`), then you could partition based on this field. As this field is not readily available in every file you'd need to map `BENE_ID` in each file to `MSIS_CASE_NUM` to respect that partitioning strategy.
+
+    We have pre-partitioned the Other Services file by the last character of the claim ID, which you can find at `/gpfs/milgram/pi/medicaid_lab/data/cms/ingested/TMSIS_super_partitions`.
     
 #### Code
 TODO 
