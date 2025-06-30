@@ -2,7 +2,9 @@
 
 T-MSIS TAF data are large, and at the start of the project it can be overwhelming and technically challenging to manipulate the data. The data are already organized into more manageable year-by-state partitions, but larger states (CA, NY, TX) and larger files (Other Services) still exceed hundreds of GB, if not TB, when read into memory (the `.parquet` files are highly compressed and can be 1-2 orders of magnitude off of the true in memory footprint).
 
-Below we provide some tips and worked examples that will help get a project started before data are subset to a more manageable size. _Though the examples below are in Python, similar logic applies when working in R; see the [vignette](../vignettes/working_in_R.md) for more information._
+Below we provide some tips and worked examples that will help get a project started before data are subset to a more manageable size.
+
+_Though the examples below are in Python, similar logic applies when working in R; see the [vignette](../vignettes/working_in_R.md) for more information._
 
 ### Reading Data
 
@@ -21,7 +23,7 @@ df.info(memory_usage='deep')
 #memory usage: 6.4 GB
 ```
 
-While this can be helpful for initial exploratory analyses once you have a better sense of the types of analyses and relevant data you should use the `columns` argument to read in only the relevant data. Because `.parquet` files are column-organized this can be done efficiently. Below we'll read in the standard important claims information (Date, ID, Member) as well as the diagnosis information (admitting diagnosis + 12 potential diagnosis columns). The result is a much smaller DataFrame that only takes up 1/4 of the previous memory requirement. 
+While this can be helpful for initial exploratory analyses, once you have a better sense of the types of analyses and relevant data you should use the `columns` argument to read in only the relevant data. Because `.parquet` files are column-organized this can be done efficiently. Below we'll read in the standard important claims information (Date, ID, Member) as well as the diagnosis information (admitting diagnosis + 12 potential diagnosis columns). The result is a much smaller DataFrame that only takes up 1/4 of the previous memory requirement. 
 
 ```python
 columns = (['BENE_ID', 'CLM_ID', 'SRVC_END_DT', 
@@ -40,7 +42,6 @@ Once the files become large enough the memory footprint of DataFrames can become
 
 While the pandas DataFrame above had a 6.4 GB memory footprint, the comparable arrow table only takes up 1.3 GB.
 
-
 ```python
 import pyarrow.parquet as pq
 
@@ -53,7 +54,7 @@ print(f'memory usage: {tbl.nbytes/10**9:.1f} GB')
 #memory usage: 1.3 GB
 ```
 
-Arrow also supports a `columns` argument and now the table subset to diagnosis information barely takes up 300 MB:
+Arrow also supports a `columns` argument; now, the table subset to diagnosis information barely takes up 300 MB:
 
 ```python
 tbl = pq.read_table(data_p+file, columns=columns)
@@ -62,7 +63,7 @@ print(f'memory usage: {tbl.nbytes/10**9:.1f} GB')
 #memory usage: 0.3 GB
 ```
 
-At any time a pyarrow table can be converted to a pandas DataFrame using the `.to_pandas()` method
+At any time a pyarrow table can be converted to a pandas DataFrame using the `.to_pandas()` method:
 
 ```python
 df = tbl.to_pandas()
@@ -90,7 +91,7 @@ tbl = pq.read_table(data_p+file)
 #memory usage: > 180 GB (OOM event kills it)
 ```
 
-If we only need a specific subset of data — e.g., only emergency departments, defined by `POS_CD == '23'` — then we can add this to the read to greatly reduce the data. 
+If we only need a specific subset of data — e.g., only emergency departments, sometimes defined by `POS_CD == '23'` — then we can add this to the read to greatly reduce the data. 
 
 ```python
 tbl = pq.read_table(data_p+file,
@@ -103,9 +104,9 @@ print(f'memory usage: {tbl.nbytes/10**9:.1f} GB')
 Now the data are small enough that we can also bring in more columns and easily manipulate it. 
 
 #### Simple Examples
-Both `pandas.read_parquet` and `pyarrow.parquet.read_table` support the same filtering. Filtering based on the following comparisons: `[==, =, >, >=, <, <=, !=, in, not in]` is achieved by providing a list of tuples which each tuple being `(column_name, comparison, value)`. 
+Both `pandas.read_parquet` and `pyarrow.parquet.read_table` support the same filtering. Filtering based on the following comparisons: `[==, =, >, >=, <, <=, !=, in, not in]` is achieved by providing a list of tuples, which each tuple being `(column_name, comparison, value)`. 
 
-Below we filter to inpatient hospital admissions for a delivery (diagnosis code Z3800)
+Below we filter to inpatient hospital admissions for a delivery (diagnosis code Z3800):
 
 ```python
 import pandas as pd
@@ -144,7 +145,7 @@ tbl = pq.read_table(data_p+file,
                     )                                           
 ```
 
-Naturally these can be combined. If you want logic that identifies (Deliveries AND January) OR (C-sections AND April):
+Naturally, these can be combined. If you want logic that identifies (Deliveries AND January) OR (C-sections AND April):
 
 ```python
 tbl = pq.read_table(data_p+file,
@@ -172,6 +173,12 @@ print(df.groupby('ADMTG_DGNS_CD').SRVC_END_DT.agg(['min', 'max']))
 TODO
 
 ### Partition Strategy for Large Files
+
+If you try to join excessively large files, you might run out of memory, and Arrow will spit an error about your "key" data exceeding the limit. Some thoughtful preprocessing can alleviate this concern.
+
+Suppose you are joining other services header and line files by claim ID. Large states — such as California — will exceed the limit on key size. You can pre-partition the header and line files by the last (hex) character of the claim ID, then run 16 separate joins — because we are joining on the claim ID, all relevant rows will be in the same partition! Though this will take longer (the partitioning step alone can take many hours) you'll be able to complete the join with few changes to your code. (You can find the partitioned other services files at `/gpfs/milgram/pi/medicaid_lab/data/cms/ingested/TMSIS_super_partitions`.)
+
+In general, think of ways to systematically reduce the size of your joins. If you're joining on beneficiary ID, consider partitioning your files by the last character of the beneficiary ID. Be mindful that each additional partition will take a while to run.
 
 #### Background
 In certain cases none of the above options work. If you need to create medical per-member-per-month spending by category in a state like California you'll need to read in the entire Other Services file and many of individual columns.
