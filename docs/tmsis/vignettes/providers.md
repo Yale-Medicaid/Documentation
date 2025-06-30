@@ -1,5 +1,7 @@
 # Identifying Providers and Facilities
 
+_Though the examples below are in Python, similar logic applies when working in R; see the [vignette](../vignettes/working_in_R.md) for more information._
+
 It's not immediately clear how to identify providers and facilities in the T-MSIS data. Though imperfect, we use the servicing and billing provider NPIs in our work.
 
 This vignette is inspired by our work on the T-MSIS Other Services file. YMMV on the other T-MSIS datasets.

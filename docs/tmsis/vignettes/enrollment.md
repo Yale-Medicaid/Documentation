@@ -1,5 +1,7 @@
 # Identifying Medicaid & Chip Enrollment
 
+_Though the examples below are in Python, similar logic applies when working in R; see the [vignette](../vignettes/working_in_R.md) for more information._
+
 For nearly every research project, we need to identify which beneficiaries are enrolled in Medicaid and what that coverage entails. Enrollment can be determined solely within the base demographic and eligibility data. While the file contains fields related to the "days enrolled each month" we **use only the restricted benefits codes** to determine eligibility. Taken from DQ Atlas:
 
 >In many states, once an individual is determined eligible, coverage begins on the first day of the month of the application and generally ends on the last day of the month. Therefore, gaps of less than a month may represent administrative errors or other data quality issues rather than true disenrollment and reenrollment in Medicaid or CHIP in these states.

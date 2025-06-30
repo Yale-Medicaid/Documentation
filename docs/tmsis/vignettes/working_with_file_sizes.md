@@ -1,8 +1,8 @@
 # Working with File Sizes
 
-T-MSIS TAF data are large and at the start of the project it can be overwhelming and technically challenging to manipulate the data. The data are already organized into more manageable state x year partitions, but larger states (CA, NY, TX) and larger files (Other Services) still exceed hundreds of GB, if not TB, when read into memory — the `.parquet` files are highly compressed and can be 1-2 orders of magnitude off of the true in memory footprint. 
+T-MSIS TAF data are large, and at the start of the project it can be overwhelming and technically challenging to manipulate the data. The data are already organized into more manageable year-by-state partitions, but larger states (CA, NY, TX) and larger files (Other Services) still exceed hundreds of GB, if not TB, when read into memory (the `.parquet` files are highly compressed and can be 1-2 orders of magnitude off of the true in memory footprint).
 
-Below we provide some tips and worked examples that will help get a project started before data are subset to a more manageable size. 
+Below we provide some tips and worked examples that will help get a project started before data are subset to a more manageable size. _Though the examples below are in Python, similar logic applies when working in R; see the [vignette](../vignettes/working_in_R.md) for more information._
 
 ### Reading Data
 

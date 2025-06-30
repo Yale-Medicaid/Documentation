@@ -46,6 +46,7 @@ nav:
       - Identifying Enrollment & Duals: tmsis/vignettes/enrollment.md
       - Identifying ED Visits: tmsis/vignettes/identifying_ED_visits.md
       - Identifying Providers and Facilities: tmsis/vignettes/providers.md
+      - Working in R: tmsis/vignettes/working_in_R.md
   - CT DSS Embedded Materials:
     - Onboarding: embedding/onboarding.md
     - Guidebook: embedding/guidebook.md
