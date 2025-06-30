@@ -20,11 +20,11 @@ There are three ways you'll regularly interact with Milgram.
 
 ### Terminal
 
-You'll use the terminal to run larger jobs and perhaps to explore files. You can open the terminal in a Remote Desktop on Milgram OnDemand, or you can [set up an SSH connection](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/) from your machine. We highly recommend the latter.
+You'll use the terminal to run larger jobs and perhaps to explore files. You can open the terminal by clicking "clusters" and "Milgram shell access" in the OnDemand browser, by opening a Remote Desktop on Milgram OnDemand, or by [setting up an SSH connection](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/) from your machine.
 
 Open the terminal (however you choose) and type `groups`. You should see `medicaid`; if you don't try typing `groups your_net_id`. If you still don't see `medicaid`, your request for access was not honored and you should contact Anthony. You won't have access to the Medicaid data until your permissions are updated.
 
-To make your life easier, you may want to add a symlink at your home directory to the `medicaid_lab` folder. You can do this by typing `ln -s /gpfs/milgram/pi/medicaid_lab /home/your_net_id`. This isn't necessary but may be helpful.
+To make your life easier, you may want to add a symlink at your home directory to the `medicaid_lab` folder. You can do this by typing `ln -s /gpfs/milgram/pi/medicaid_lab /home/your_net_id` (replace `your_net_id`!). This isn't necessary but may be helpful.
 
 ### File Explorer
 
@@ -103,13 +103,17 @@ You'll generally submit batch jobs using the terminal. `cd` to the folder with t
 
 Most jobs should start immediately. If you still haven't received that "job started" email, you're probably in the queue. This is usually a result of you requesting a lot of resources _and_ many other users running their own computationally expensive tasks.
 
-First, run `squeue --me` to make sure your job went through.
+First, run `squeue --me` to make sure your job went through. You should see `(Resources)` in the right-most column, which indicates that your job is waiting on compute or memory availability.
 
 Then, run `squeue -p [partition_name]` to see who else is using Milgram. (`partition_name` can be `day`, `week`, etc.) Check the [Milgram user guide](https://docs.ycrc.yale.edu/clusters/milgram/) to see the total available compute nodes. If you sum up the existing jobs, you'll probably see that your job would fall over the limits.
 
-You can cancel a job with `scancel [job_id]`. The cluster will tell you your `job_id` when you submit it, and you can also find it in your queue.
+You can cancel a job if necessary with `scancel [job_id]`. The cluster will tell you your `job_id` when you submit it, and you can also find it in your queue.
 
 ### Finding Available Resources
+
+If your job is stuck in queue, the first thing to consider is if you really need all the resources you requested. If you don't have any [parallelization](../data_science/parallelization.md) in your code, you probably only need one core. Similarly, if you're not working with large datasets, you shouldn't need 181 GB of memory. Requesting only what you need helps you get your job running sooner and is [considerate](https://research.computing.yale.edu/services/support-high-performance-computing/hpc-policies#Compute) of others on the cluster.
+
+Need what you requested? You might be stuck waiting. If you can reduce your request, continue reading.
 
 !!! warning "Some guesswork"
 
