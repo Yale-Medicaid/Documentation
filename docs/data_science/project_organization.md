@@ -87,3 +87,9 @@ MI_enrollment/
 ## Project Templates
 
 We recommend starting your R projects from the [template repository](https://github.com/Yale-Medicaid/R_project_template/) on the Yale Medicaid Lab GitHub page. Follow the instructions in the README file in that repository.
+
+## Project Tracking
+
+As our team grows, project management has become more and more important. Chima, Jacob, and Anthony are involved in many workstreams, so creating a centralized tracker for your project will help everyone stay on the same page. If you have a system that works for you, great! Otherwise, see below for our recommendation.
+
+Many members of the lab use [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) as a project management tool. GitHub Projects is a Kanban board that integrates with your repository. Each "ticket" you create on Projects syncs with a corresponding "issue" on the GitHub repository. Branches also align with your ticket, so when you merge a pull request the ticket moves to the "done" column.
