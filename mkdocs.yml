@@ -29,6 +29,7 @@ nav:
     - Coding Conventions: data_science/coding_conventions.md
     - Open Data Resources: data_science/open_data_resources.md
     - Parallelization: data_science/parallelization.md
+    - Collaborating on Code: tmsis/tmsis_code_collab.md
     - Virtual Environments:
       - Overview: state_data/venv/venv_overview.md
       - Python Virtual Environments: state_data/venv/py_venv.md
@@ -40,7 +41,6 @@ nav:
     - T-MSIS Overview: tmsis/tmsis_medicaid_data.md
     - Working on Milgram: tmsis/tmsis_getting_started.md
     - R & Python Environments: tmsis/tmsis_environments.md
-    - Collaborating on Code: tmsis/tmsis_code_collab.md
     - Vignettes:
       - Working with File Sizes: tmsis/vignettes/working_with_file_sizes.md
       - Identifying Enrollment & Duals: tmsis/vignettes/enrollment.md
