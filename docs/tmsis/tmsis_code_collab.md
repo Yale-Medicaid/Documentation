@@ -22,7 +22,7 @@ On Milgram, the most up to date, stable, version of the libraries will be found 
 
 This saves you from having to type your password or provide a token every time. YCRC provides a [thorough guide](https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/) on using and generating SSH keys, the main steps of which we outline here. If you've already generated SSH keys (say, to SSH into Milgram through the terminal), you can skip the generation steps. 
 
-Within a [terminal in Milgram](../tmsis/tmsis_getting_started.md) type `ssh-keygen`. Press enter to save the keys in the default location `/home/yourusername/.ssh/id_rsa`, and create some passphrase as an extra layer of protection. The **public key**, saved in `~/.ssh/id_rsa.pub` is what we share. **NEVER SHARE THE PRIVATE KEY**, which is stored in the similarly named file *without* the `.pub` suffix. 
+Within a [terminal in Milgram](../tmsis/tmsis_getting_started.md#terminal) type `ssh-keygen`. Press enter to save the keys in the default location `/home/yourusername/.ssh/id_rsa`, and create some passphrase as an extra layer of protection. The **public key**, saved in `~/.ssh/id_rsa.pub` is what we share. **NEVER SHARE THE PRIVATE KEY**, which is stored in the similarly named file *without* the `.pub` suffix. 
 
 You can display the contents of the public key with `cat ~/.ssh/id_rsa.pub`, which will show a very long string beginning with something like `ssh-rsa `. Copy the entire outut (including the ssh-ra part). 
 
