@@ -13,7 +13,7 @@ There are several administrative steps to getting started that you may complete 
         - storage@yale group: YSPH_HPM-CC0940-MEDSPH2 (where HIPAA Medicaid data is stored)
     - When setting up your managed computer, request that ITS install the following programs:
         - Cisco AnyConnect Secure Mobility Client
-        - Microsoft Remote Desktop
+        - <strike>Microsoft Remote Desktop</strike> Windows App
         - Slack
         - Dropbox
         - Zoom
