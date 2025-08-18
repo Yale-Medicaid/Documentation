@@ -48,8 +48,9 @@ nav:
       - Identifying Providers and Facilities: tmsis/vignettes/providers.md
       - Working in R: tmsis/vignettes/working_in_R.md
   - CT DSS Embedded Materials:
-    - Onboarding: embedding/onboarding.md
     - Guidebook: embedding/guidebook.md
+    - Onboarding: embedding/onboarding.md
+    - Coding Best Practices: embedding/coding_best_practices.md
   - Research Areas: research_areas.md
 
 
