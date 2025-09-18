@@ -1,0 +1,1568 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tmsis_medicaid_data/">
+      
+      
+        <link rel="next" href="../tmsis_code_collab/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Working on Milgram - SCALE Medicaid Lab Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started-with-t-msis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SCALE Medicaid Lab Documentation" class="md-header__button md-logo" aria-label="SCALE Medicaid Lab Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SCALE Medicaid Lab Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Working on Milgram
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SCALE Medicaid Lab Documentation" class="md-nav__button md-logo" aria-label="SCALE Medicaid Lab Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SCALE Medicaid Lab Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Onboarding
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Onboarding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/new_member_onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    New Member Onboarding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/new_member_tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    New Member Tips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/data_and_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data and Systems Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Science Practices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Science Practices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/project_organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/coding_conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coding Conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/open_data_resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Data Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/parallelization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parallelization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Virtual Environments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Virtual Environments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/venv/venv_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/venv/py_venv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Virtual Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/venv/r_venv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R Virtual Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    State Medicaid Data
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            State Medicaid Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../state_data/state_medicaid_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    State Medicaid Data Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../state_data/server_connect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working on the Yale Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    T-MSIS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T-MSIS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmsis_medicaid_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T-MSIS Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Working on Milgram
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working on Milgram
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-access-to-t-msis-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining Access to T-MSIS Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-milgram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Milgram
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Milgram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-storageyale-on-milgram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing storage@yale on Milgram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-msis-tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      T-MSIS Tech Stack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-and-tricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips and Tricks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-slurm-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful SLURM Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Useful SLURM Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-available-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Available Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Help
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmsis_code_collab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collaborating on Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmsis_environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R & Python Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vignettes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Vignettes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignettes/working_with_file_sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working with File Sizes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignettes/enrollment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identifying Enrollment & Duals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignettes/identifying_ED_visits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identifying ED Visits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignettes/providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identifying Providers and Facilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignettes/working_in_R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working in R
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CT DSS Embedded Materials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            CT DSS Embedded Materials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embedding/guidebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guidebook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embedding/onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Onboarding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embedding/coding_best_practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coding Best Practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research_areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Research Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-access-to-t-msis-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining Access to T-MSIS Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-milgram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Milgram
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Milgram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-storageyale-on-milgram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing storage@yale on Milgram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-msis-tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      T-MSIS Tech Stack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-and-tricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips and Tricks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-slurm-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful SLURM Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Useful SLURM Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-available-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Available Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Help
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="getting-started-with-t-msis">Getting Started with T-MSIS</h1>
+<h2 id="obtaining-access-to-t-msis-data">Obtaining Access to T-MSIS Data</h2>
+<p>Due to the size and nature of the national data set, T-MSIS data are housed in the HIPAA-aligned <a href="https://docs.ycrc.yale.edu/clusters/milgram/">Milgram cluster</a> at Yale Center for Research Computing. The first step is to <a href="https://research.computing.yale.edu/support/hpc/account-request">request an account</a>.</p>
+<ol>
+<li>Make sure Anthony is aware you are requesting an account as he will need to approve the request.</li>
+<li>Fill out the form<ul>
+<li>Department or School: Yale School of Public Health</li>
+<li>Are you a Principal Investigator: No</li>
+<li>Principal Investigator: Chima Ndumele</li>
+<li>Clusters: Milgram</li>
+<li>Special Requests: request access to the <code>medicaid</code> group.</li>
+</ul>
+</li>
+</ol>
+<h2 id="using-milgram">Using Milgram</h2>
+<p>Once you've obtained access, sign into <a href="https://ood-milgram.ycrc.yale.edu/">Milgram OnDemand</a>. You may need to be connected to the Yale VPN even if you're on the Yale Secure Wi-Fi.</p>
+<p>There are three ways you'll regularly interact with Milgram.</p>
+<h3 id="terminal">Terminal</h3>
+<p>You'll use the terminal to run larger jobs and perhaps to explore files. You can open the terminal by clicking "clusters" and "Milgram shell access" in the OnDemand browser, by opening a Remote Desktop on Milgram OnDemand, or by <a href="https://docs.ycrc.yale.edu/clusters-at-yale/access/ssh/">setting up an SSH connection</a> from your machine.</p>
+<p>Open the terminal (however you choose) and type <code>groups</code>. You should see <code>medicaid</code>; if you don't try typing <code>groups your_net_id</code>. If you still don't see <code>medicaid</code>, your request for access was not honored and you should contact Anthony. You won't have access to the Medicaid data until your permissions are updated.</p>
+<p>To make your life easier, you may want to add a symlink at your home directory to the <code>medicaid_lab</code> folder. You can do this by typing <code>ln -s /gpfs/milgram/pi/medicaid_lab /home/your_net_id</code> (replace <code>your_net_id</code>!). This isn't necessary but may be helpful.</p>
+<h3 id="file-explorer">File Explorer</h3>
+<p>You'll probably want to peruse the Medicaid lab files. Open OnDemand, then click on Files -&gt; Home Directory in the navbar. That should take you to <code>/home/your_net_id/</code>. If you set up the symlink correctly, you should be able to click on <code>medicaid_lab</code>. If not, click "change directory" and enter <code>/gpfs/milgram/pi/medicaid_lab/</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Don't download files</p>
+<p>It's easy—too easy—to accidentally begin downloading a file in the explorer. T-MSIS data are only allowed to live on Milgram, so do not download them. Furthermore, don't download any files with information that could possibly recreate, or expose, individual-level claims data. </p>
+<p>ALWAYS double check jupyter notebooks, log files, error messages, or other exploratory output to ensure there is no individual data being displayed before sharing beyond Milgram.</p>
+<p>Only connect to Milgram on your official Yale Laptop. These are HIPAA compliant and encrypted as an additional layer of protection if a file download is ever initiated.</p>
+</div>
+<p>You can also use the Remote Desktop app to explore files. The interface isn't as nice, but it's good to be careful.</p>
+<h3 id="coding">Coding</h3>
+<p>Start your first project as a subfolder in <code>/home/your_net_id/project/</code>. Keep in mind that this is actually a symlink to <code>/gpfs/milgram/project/ndumele/your_net_id/</code>.</p>
+<p>Then, choose your preferred OnDemand app and start coding! Most work at the lab is conducted in R (use RStudio Server) or Python (use Jupyter).</p>
+<p>For most T-MSIS tasks, the interactive session has enough computing power to work on one year of data in a smaller state, e.g., South Dakota in 2018. When starting your session, you should be able to request six hours of one CPU core with 30 GB of RAM. You can request OnDemand sessions with more cores and/or memory if you use the <code>day</code> or <code>week</code> partition. When you want to run your production analyses, you should <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/">submit a job with SLURM</a>.</p>
+<h2 id="accessing-storageyale-on-milgram">Accessing storage@yale on Milgram</h2>
+<p>Certain drives on storage@yale are also suitable for hisk-risk data, and in rare cases we may need to transfer data between these. To connect to storage@yale on Milgram:</p>
+<ul>
+<li>Begin a remote desktop session (Note: the file transfer will need to complete within the allotted time, you can reach out to YCRC to request a long session)</li>
+<li>Open a file browser, click the pen and pencil icon next to the "Location" navigation, type <code>smb://storage.yale.edu/home/</code> and press enter</li>
+<li>This should open a dialogue box:<ul>
+<li>Select: registered user   </li>
+<li>ID: <code>your_NET_ID</code></li>
+<li>Change SAMBA to YALE</li>
+<li>password is your normal netID password</li>
+</ul>
+</li>
+<li>Once you log in you should see the shares associated with your account </li>
+<li>You can open another file browser and "drag and drop" files between the two drives</li>
+</ul>
+<h2 id="t-msis-tech-stack">T-MSIS Tech Stack</h2>
+<p>The <a href="../tmsis_medicaid_data/#documentation">Documentation</a> section in the T-MSIS Medicaid Data page describes the T-MSIS data. After reading that, you'll want to familiarize yourself with the specific tech stack we use at the Medicaid lab.</p>
+<p>We store all our data in parquet files. R programmers can use the <code>arrow</code> package to connect to these files, and Python programmers can use <code>pyarrow</code>.</p>
+<p>If you haven't used Arrow or the parquet format before, first read <a href="https://r4ds.hadley.nz/arrow">Hadley Wickham's introduction</a>. The exercises are quite helpful. You may find the following material helpful additional reading:</p>
+<ul>
+<li><a href="https://arrow.apache.org/docs/r/reference/acero.html">Function reference</a></li>
+<li><a href="https://arrow-user2022.netlify.app/hello-arrow.html">A workshop notebook</a></li>
+<li><a href="https://arrow.apache.org/cookbook/r/">An online book by Apache</a></li>
+<li><a href="https://arrow.apache.org/docs/r/">The R <code>arrow</code> package page</a></li>
+</ul>
+<h2 id="tips-and-tricks">Tips and Tricks</h2>
+<ul>
+<li>
+<p>When working in a Milgram OnDemand session, you will occasionally need to reauthenticate. This can happen every hour or two, even if you're working the entire time.</p>
+<p><img alt="Milgram Reauthentication" src="../../images/milgram_error_saving.png" style="height: 200px;width: 400px;display: block; margin: 0 auto" /></p>
+<p>An error saving a file is a big hint that you need to reauthenticate. Click "Ok," then navigate to the Milgram OnDemand "My Interactive Sessions" page in another tab. Refresh that page and reauthenticate. You can then re-join your RStudio Server session and get back to work.</p>
+</li>
+<li>
+<p>If you're working on a large task in an RStudio Server session, you may see this error message:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Error in `get_result(output = out, options)`: ! callr subprocess failed: could not start R, exited with non-zero status, has crashed or was killed ℹ See `$stderr` for standard error.
+</span></code></pre></div>
+<p>This often implies that you have not allocated enough memory to the task. You could start a new interactive session with more memory or you can submit a job with SLURM.</p>
+</li>
+<li>
+<p>You may have trouble installing R packages. You can try <a href="https://stackoverflow.com/questions/17082341/how-to-downgrade-an-r-package-by-installing-an-older-version">installing an older version</a> from the CRAN archive, or you can try installing from R Universe.</p>
+</li>
+</ul>
+<h2 id="useful-slurm-commands">Useful SLURM Commands</h2>
+<p>To submit a job, you'll need a <a href="https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/slurm-examples/">shell script that runs your code</a>.</p>
+<p>You'll generally submit batch jobs using the terminal. <code>cd</code> to the folder with the shell script, then type <code>sbatch submit.sh</code> (assuming your shell script is called <code>submit.sh</code>). You should receive an email from no-reply@milgram.ycrc.yale.edu when the job starts and when it finishes or fails for any reason (error in the code, invalid configuration, ran out of memory, etc.).</p>
+<p>Most jobs should start immediately. If you still haven't received that "job started" email, you're probably in the queue. This is usually a result of you requesting a lot of resources <em>and</em> many other users running their own computationally expensive tasks.</p>
+<p>First, run <code>squeue --me</code> to make sure your job went through. You should see <code>(Resources)</code> in the right-most column, which indicates that your job is waiting on compute or memory availability.</p>
+<p>Then, run <code>squeue -p [partition_name]</code> to see who else is using Milgram. (<code>partition_name</code> can be <code>day</code>, <code>week</code>, etc.) Check the <a href="https://docs.ycrc.yale.edu/clusters/milgram/">Milgram user guide</a> to see the total available compute nodes. If you sum up the existing jobs, you'll probably see that your job would fall over the limits.</p>
+<p>You can cancel a job if necessary with <code>scancel [job_id]</code>. The cluster will tell you your <code>job_id</code> when you submit it, and you can also find it in your queue. If you lose your <code>job_id</code>, run <code>sacct -X --start now-3hours -o jobid,jobname,start</code>, adjusting <code>3hours</code> to whatever is necessary to capture the start time.</p>
+<p>To get the stats of a job, run <code>jobstats [job_id]</code>. This is helpful if you want to maximize parallelization with constrained memory.</p>
+<h3 id="finding-available-resources">Finding Available Resources</h3>
+<p>If your job is stuck in queue, the first thing to consider is if you really need all the resources you requested. If you don't have any <a href="../../data_science/parallelization/">parallelization</a> in your code, you probably only need one core. Similarly, if you're not working with large datasets, you shouldn't need 181 GB of memory. Requesting only what you need helps you get your job running sooner and is <a href="https://research.computing.yale.edu/services/support-high-performance-computing/hpc-policies#Compute">considerate</a> of others on the cluster.</p>
+<p>Need what you requested? You might be stuck waiting. If you can reduce your request, continue reading.</p>
+<div class="admonition warning">
+<p class="admonition-title">Some guesswork</p>
+<p>Some of the information in this subsection may not be entirely accurate. Computing is hard! When in doubt, reach out to the <a href="https://research.computing.yale.edu/support">YCRC support desk</a>.</p>
+</div>
+<p>When you run <code>squeue -p [partition_name]</code>, look at the values in the <code>NODELIST(REASON)</code> column. Jobs in progress will have a node ID, while queued jobs will have a reason in parentheses, e.g., <code>(Resources)</code>.</p>
+<p>Say I'm submitting a job requesting one node and all 36 cores, but I'm stuck in the queue. First, I will look at the existing jobs. If all the jobs on one node look like they'll finish soon, perhaps I'll wait in the queue. But if the jobs have another few days, it may be faster to reduce my requested resources.</p>
+<p>To see how much you need to reduce your resources, run <code>scontrol show node [node_id]</code> with one of the <code>node_id</code> values from <code>squeue -p [partition_name]</code>. The <code>CfgTRES</code> row of the output shows the maximum values, and the <code>AllocTRES</code> shows what's in use. Subtract <code>AllocTRES</code> from <code>CfgTRES</code> to see what's available.</p>
+<h2 id="getting-help">Getting Help</h2>
+<p>It takes some time to get started, but there are many resources to help. Anthony and other folks at the lab can assist with most questions, which you can ask individually or through the Medicaid lab's T-MSIS Slack channel. Issues with Milgram—including access, permissions, package installation errors, and code execution—can be directed to the <a href="https://research.computing.yale.edu/support">YCRC support desk</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

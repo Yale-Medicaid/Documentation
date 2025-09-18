@@ -1,0 +1,1404 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../tmsis/vignettes/working_in_R/">
+      
+      
+        <link rel="next" href="../onboarding/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Guidebook - SCALE Medicaid Lab Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#embedding-guidebook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SCALE Medicaid Lab Documentation" class="md-header__button md-logo" aria-label="SCALE Medicaid Lab Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SCALE Medicaid Lab Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guidebook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SCALE Medicaid Lab Documentation" class="md-nav__button md-logo" aria-label="SCALE Medicaid Lab Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SCALE Medicaid Lab Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Onboarding
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Onboarding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/new_member_onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    New Member Onboarding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/new_member_tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    New Member Tips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/data_and_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data and Systems Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Science Practices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Science Practices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/project_organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/coding_conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coding Conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/open_data_resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Data Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/parallelization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parallelization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Virtual Environments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Virtual Environments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/venv/venv_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/venv/py_venv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Virtual Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_science/venv/r_venv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R Virtual Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    State Medicaid Data
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            State Medicaid Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../state_data/state_medicaid_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    State Medicaid Data Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../state_data/server_connect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working on the Yale Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    T-MSIS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T-MSIS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tmsis/tmsis_medicaid_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T-MSIS Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tmsis/tmsis_getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working on Milgram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tmsis/tmsis_code_collab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collaborating on Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tmsis/tmsis_environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R & Python Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vignettes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Vignettes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tmsis/vignettes/working_with_file_sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working with File Sizes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tmsis/vignettes/enrollment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identifying Enrollment & Duals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tmsis/vignettes/identifying_ED_visits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identifying ED Visits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tmsis/vignettes/providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identifying Providers and Facilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tmsis/vignettes/working_in_R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Working in R
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CT DSS Embedded Materials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            CT DSS Embedded Materials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Guidebook
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Guidebook
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#navigating-across-firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating Across Firewalls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigating Across Firewalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-projects-belong-in-which-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which projects belong in which systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-info-can-be-shared-across-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which info can be shared across systems?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails-dos-donts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardrails: Do’s &amp; Don’t’s
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Onboarding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coding_best_practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coding Best Practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research_areas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Research Areas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#navigating-across-firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating Across Firewalls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigating Across Firewalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-projects-belong-in-which-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which projects belong in which systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-info-can-be-shared-across-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which info can be shared across systems?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardrails-dos-donts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardrails: Do’s &amp; Don’t’s
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="embedding-guidebook">Embedding Guidebook</h1>
+<p>The Embedding Guidebook is a resource for staff members that will have access to work within external data systems, such as direct access to a state agency database. This documentation does not include specific onboarding tasks for embedding. Instead, the guidebook will help you navigate working across firewalled systems.</p>
+<p>Please read closely and familiarize yourself with the unique constraints for embedded work. We include specific guardrails and general guidelines for reference. Nevertheless, the number one guideline for embedded work is <strong>ask whenever you are uncertain</strong>. In the meantime, there are a few main themes to keep in mind that appear throughout the guidebook:</p>
+<ul>
+<li><strong>Compliance and regulations:</strong> The partnering organization will have their own set of rules (e.g., related to data access and privacy). Receiving credentials to access external systems may involve completing forms or trainings for these subjects. In addition to these organizational trainings, we provide more role-specific rules here.</li>
+<li><strong>Pre-approved scope of work:</strong> Accessing data (both at Yale and externally) has been pre-approved for specific research activities. While this guidebook outlines how we operate across systems at a high-level, you may benefit from reviewing the scope of work documents related to your projects. The scope may be documented in a Research Service Agreements or IRB approval.</li>
+<li><strong>Knowledge sharing:</strong> In addition to data access, you will likely have transparency into the partnering organization’s internal operations. Accessing sensitive information should be approached with just as much prudence as accessing sensitive data.</li>
+</ul>
+<h2 id="navigating-across-firewalls">Navigating Across Firewalls</h2>
+<p>Embedded analysts get to wear two hats as both a researcher at Yale and an applied analyst in their embedded role. Maybe contrary to expectations, the purpose of embedding is <em>not</em> to perform research. Instead, it augments the research we pursue at Yale. By supporting government partners in improving programs and policies, we can spot opportunities for new research or shape our current research with new perspectives and knowledge.</p>
+<p>In the diagram below, we visualize the importance of treating the systems as isolated environments with distinct activities performed in each.</p>
+<p><img alt="Firewall Activities" src="../embedding_firewall.svg" /></p>
+<p>Taking an example from the diagram above. In the partnering organization's system, we may support efforts to link important data across programs or departments. The linkage may inform administrative decisions and policies. By helping make this tool a reality, it also creates an opportunity to request newly available data linkages for continued research at Yale.</p>
+<h3 id="which-projects-belong-in-which-systems">Which projects belong in which systems?</h3>
+<p>All research intended for publication or grant requirements should be performed at Yale using deidentified data extracts. In comparison, applied support for policies, programs, and technical tooling is performed in the external system. The applied support may involve generating evidence to support decision-making, which can feel similar to pure research. We view this work to diverge toward quality improvement activities, which <a href="https://www.acpjournals.org/doi/full/10.7326/0003-4819-146-9-200705010-00155?download=true&amp;journalCode=aim">Lynn et al. (2007)</a> define (in the health care setting) as, "systematic, data-guided activities designed to bring about immediate improvement in health care delivery in particular settings."</p>
+<p>Any single project you support should <em>not</em> be divided across systems. As a result, we need to be intentional about where we initially pursue projects to avoid future duplication. Nevertheless, we expect some information will need to be duplicated when it’s (1) appropriate to do so, and (2) relevant for both Yale and the embedded organization (e.g., high-level strategic documentation used for decision-making).</p>
+<h3 id="which-info-can-be-shared-across-systems">Which info can be shared across systems?</h3>
+<p>As we know, transferring data across systems is not allowed. But what about transferring information? (When discussing "information" below, we assume it is not disaggregated data.)</p>
+<p>For information flowing from Yale, it's commonly the case that relevant information will be shareable to empower government powers. However, some situations may still require additional thought, such as sharing preliminary results from separate grant projects.</p>
+<p>For information gathered through embedded projects, we err on the side of caution by sharing <strong>only what's needed</strong>. This is to protect both ourselves and our partners from unintended disclosures, privacy violations, or compliance issues. "Only what's needed" extends the "minimum data required" mindset that's also expected in our role. When running analysis, you know which data's required for you personally to do your job. For information sharing, we need to consider which info our non-embedded collaborators need (e.g., Yale Principal Investigators) to support appropriately.</p>
+<p>Common items that are okay to share include information related to your project management, high-level constraints, high-level blockers, and deliverable drafts (by which time all data's aggregated). Sharing information like this typically happens over meetings or emails. It does <strong>not</strong> involve signing into Yale-credentialed applications while embedded to centralize project management or to share files across the firewall.</p>
+<p>Items that you may encounter that are typically <em>not</em> shared from external systems include contractual language, internal memos, or code. If there are instances you think it's appropriate to do so, you should receive approval first. And, per the number one guideline, <strong>ask whenever you are uncertain</strong>.</p>
+<h2 id="guardrails-dos-donts">Guardrails: Do’s &amp; Don’t’s</h2>
+<p>We expect everyone to conduct themselves professionally within external systems, similar to Yale systems. However, some daily tasks that typically seem harmless should be approached with more caution in external systems, especially when it’s a government system. We highlight some of these items below.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Do’s</th>
+<th>Don’t’s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compliance Trainings</strong></td>
+<td><strong>Do</strong> complete the external organization’s HR checklist required for embedded personnel</td>
+<td><strong>Do not</strong> assume the trainings are exactly the same as Yale</td>
+</tr>
+<tr>
+<td><strong>Applications</strong></td>
+<td><strong>Do</strong> become familiar with the tools and applications made available with embedded credentials</td>
+<td><strong>Do not</strong> log into online applications using your Yale or personal credentials (e.g., Google, Outlook, Asana, etc.)</td>
+</tr>
+<tr>
+<td><strong>Installations</strong></td>
+<td><strong>Do</strong> know how to request new software through the partnering organization’s support teams</td>
+<td><strong>Do not</strong> install new software without prior approval</td>
+</tr>
+<tr>
+<td><strong>Email &amp; Messaging</strong></td>
+<td><strong>Do</strong> know that any messages sent on government systems can be viewed by the public through Freedom of Information Act (FOIA) requests</td>
+<td><strong>Do not</strong> send code, data, internal findings, or other sensitive information (e.g., contractual info) to your personal or Yale accounts</td>
+</tr>
+<tr>
+<td><strong>Document Access</strong></td>
+<td><strong>Do</strong> use organizational trainings, documentation, and reports to perform your role as expected</td>
+<td><strong>Do not</strong> access documents that are not relevant to your work</td>
+</tr>
+<tr>
+<td><strong>Data Requests</strong></td>
+<td><strong>Do</strong> understand that you have skills and data access that are useful to many groups, both internal and external to the partnering organization</td>
+<td><strong>Do not</strong> provide data access or data extracts to anyone outside our team without express written approval from a supervisor at the partnering organization</td>
+</tr>
+<tr>
+<td><strong>Contractual Information</strong></td>
+<td><strong>Do</strong> know that the partnering organization may work with multiple contractors relevant to your work</td>
+<td><strong>Do not</strong> share information about contractual agreements or contractual language outside the embedded organization without approval from a supervisor at the partnering organization</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
