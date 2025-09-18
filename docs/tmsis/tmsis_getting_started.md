@@ -107,7 +107,9 @@ First, run `squeue --me` to make sure your job went through. You should see `(Re
 
 Then, run `squeue -p [partition_name]` to see who else is using Milgram. (`partition_name` can be `day`, `week`, etc.) Check the [Milgram user guide](https://docs.ycrc.yale.edu/clusters/milgram/) to see the total available compute nodes. If you sum up the existing jobs, you'll probably see that your job would fall over the limits.
 
-You can cancel a job if necessary with `scancel [job_id]`. The cluster will tell you your `job_id` when you submit it, and you can also find it in your queue.
+You can cancel a job if necessary with `scancel [job_id]`. The cluster will tell you your `job_id` when you submit it, and you can also find it in your queue. If you lose your `job_id`, run `sacct -X --start now-3hours -o jobid,jobname,start`, adjusting `3hours` to whatever is necessary to capture the start time.
+
+To get the stats of a job, run `jobstats [job_id]`. This is helpful if you want to maximize parallelization with constrained memory.
 
 ### Finding Available Resources
 
