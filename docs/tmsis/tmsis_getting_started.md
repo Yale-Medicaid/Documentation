@@ -95,6 +95,8 @@ If you haven't used Arrow or the parquet format before, first read [Hadley Wickh
 
 - You may have trouble installing R packages. You can try [installing an older version](https://stackoverflow.com/questions/17082341/how-to-downgrade-an-r-package-by-installing-an-older-version) from the CRAN archive, or you can try installing from R Universe.
 
+- If you want to make maps (e.g., using `ggplot2`), you'll need to include some additional modules in your R session: `foss/2022b UDUNITS/2.2.28-GCCcore-12.2.0 GDAL/3.6.2-foss-2022b`. This list is for `R/4.4.1-foss-2022b`; you might have to adjust the module names for other versions. Use `module spider foss` (and similar commands) to see the relevant options.
+
 ## Useful SLURM Commands
 
 To submit a job, you'll need a [shell script that runs your code](https://docs.ycrc.yale.edu/clusters-at-yale/job-scheduling/slurm-examples/).
