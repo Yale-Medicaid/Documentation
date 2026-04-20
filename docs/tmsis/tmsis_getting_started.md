@@ -129,6 +129,49 @@ Say I'm submitting a job requesting one node and all 36 cores, but I'm stuck in 
 
 To see how much you need to reduce your resources, run `scontrol show node [node_id]` with one of the `node_id` values from `squeue -p [partition_name]`. The `CfgTRES` row of the output shows the maximum values, and the `AllocTRES` shows what's in use. Subtract `AllocTRES` from `CfgTRES` to see what's available.
 
+### Running a cascading SLURM job
+
+You should use SLURM to submit large jobs to the cluster. You can request a lot of resources (memory and cores), but your job might still run out of memory and quit. Use the shell script below (courtesy of Claude) to submit jobs with fewer and fewer cores.
+
+```
+#!/usr/bin/bash
+
+R_CMD='targets::tar_make()'
+
+CORES=(48 24 12 6 3 1)
+
+BASE_ARGS="
+  --job-name=YOUR-JOB
+  --time=8:00:00
+  --mail-type=all
+  --partition=scavenge
+  --mem=478GB
+  --output=job_outputs/out_%j.txt
+  --error=job_outputs/err_%j.txt
+"
+
+PREV_JOB_ID=""
+
+for CPUS in "${CORES[@]}"; do
+  if [ -z "$PREV_JOB_ID" ]; then
+    JOB_ID=$(sbatch $BASE_ARGS --cpus-per-task=$CPUS \
+      --wrap="module add R/4.4.1-foss-2022b && R -e \"$R_CMD\"" | awk '{print $NF}')
+  else
+    JOB_ID=$(sbatch $BASE_ARGS --cpus-per-task=$CPUS \
+      --dependency=afternotok:$PREV_JOB_ID \
+      --wrap="module add R/4.4.1-foss-2022b && R -e \"$R_CMD\"" | awk '{print $NF}')
+  fi
+
+  echo "Submitted job $JOB_ID with $CPUS cores"
+  PREV_JOB_ID=$JOB_ID
+done
+```
+
+A few notes:
+
+- This chunk runs an R targets script. Your command might be different.
+- If your job fails for another reason (e.g., a bug in the code), SLURM will still submit each job. I suggest testing your script first.
+
 ## Getting Help
 
 It takes some time to get started, but there are many resources to help. Anthony and other folks at the lab can assist with most questions, which you can ask individually or through the Medicaid lab's T-MSIS Slack channel. Issues with Milgram—including access, permissions, package installation errors, and code execution—can be directed to the [YCRC support desk](https://research.computing.yale.edu/support).
