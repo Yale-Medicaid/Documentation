@@ -115,19 +115,9 @@ To get the stats of a job, run `jobstats [job_id]`. This is helpful if you want 
 
 ### Finding Available Resources
 
-If your job is stuck in queue, the first thing to consider is if you really need all the resources you requested. If you don't have any [parallelization](../data_science/parallelization.md) in your code, you probably only need one core. Similarly, if you're not working with large datasets, you shouldn't need 181 GB of memory. Requesting only what you need helps you get your job running sooner and is [considerate](https://research.computing.yale.edu/services/support-high-performance-computing/hpc-policies#Compute) of others on the cluster.
+If your job is stuck in queue, the first thing to consider is if you really need all the resources you requested. If you don't have any [parallelization](../data_science/parallelization.md) in your code, you probably only need one core. Similarly, if you're not working with large datasets, you shouldn't need a ton of memory. Requesting only what you need helps you get your job running sooner and is [considerate](https://research.computing.yale.edu/services/support-high-performance-computing/hpc-policies#Compute) of others on the cluster.
 
-Need what you requested? You might be stuck waiting. If you can reduce your request, continue reading.
-
-!!! warning "Some guesswork"
-
-    Some of the information in this subsection may not be entirely accurate. Computing is hard! When in doubt, reach out to the [YCRC support desk](https://research.computing.yale.edu/support).
-
-When you run `squeue -p [partition_name]`, look at the values in the `NODELIST(REASON)` column. Jobs in progress will have a node ID, while queued jobs will have a reason in parentheses, e.g., `(Resources)`.
-
-Say I'm submitting a job requesting one node and all 36 cores, but I'm stuck in the queue. First, I will look at the existing jobs. If all the jobs on one node look like they'll finish soon, perhaps I'll wait in the queue. But if the jobs have another few days, it may be faster to reduce my requested resources.
-
-To see how much you need to reduce your resources, run `scontrol show node [node_id]` with one of the `node_id` values from `squeue -p [partition_name]`. The `CfgTRES` row of the output shows the maximum values, and the `AllocTRES` shows what's in use. Subtract `AllocTRES` from `CfgTRES` to see what's available.
+To see the available cores/RAM combination on a partition, in the terminal, run `sinfo -p [partition_name] -N --noheader -o "%N|%C|%e" | awk -F'|' 'BEGIN{printf "%-15s %6s %10s\n","NODE","IDLE","FREE_GB"}{split($2,c,"/");printf "%-15s %6s %10.1f\n",$1,c[2],$3/1024}'`.
 
 ### Running a cascading SLURM job
 
