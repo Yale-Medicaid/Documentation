@@ -117,7 +117,7 @@ To get the stats of a job, run `jobstats [job_id]`. This is helpful if you want 
 
 If your job is stuck in queue, the first thing to consider is if you really need all the resources you requested. If you don't have any [parallelization](../data_science/parallelization.md) in your code, you probably only need one core. Similarly, if you're not working with large datasets, you shouldn't need a ton of memory. Requesting only what you need helps you get your job running sooner and is [considerate](https://research.computing.yale.edu/services/support-high-performance-computing/hpc-policies#Compute) of others on the cluster.
 
-To see the available cores/RAM combination on a partition, in the terminal, run `sinfo -p [partition_name] -N --noheader -o "%N|%C|%e" | awk -F'|' 'BEGIN{printf "%-15s %6s %10s\n","NODE","IDLE","FREE_GB"}{split($2,c,"/");printf "%-15s %6s %10.1f\n",$1,c[2],$3/1024}' | (sed -u 1q; sort -k3,3 -nr)`.
+To see the available cores/RAM combination on a partition, in the terminal, run `sinfo -p [partition_name] -N --noheader -O "NodeHost:16,CPUsState:16,Memory:10,AllocMem:10,StateLong:12" | awk '{split($2,c,"/"); printf "%-16s %4s idle %8.1f GB unalloc  %s\n", $1, c[2], ($3-$4)/1024, $5}' | sort -k4 -nr | head -20`.
 
 ### Running a cascading SLURM job
 
