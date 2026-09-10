@@ -18,6 +18,7 @@ The Connecticut DSS embedded portal is based out of an AVD instance. You must go
     - Go to "Connections > Add Workspace" and use the following URL: https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery
     - Use your state credentials (@ct.gov) to log in, including 2-factor authentication
 4. Reset your password
+    - **NOTE:** You may have to wait 1 week before being able to change the temporary password received from DSS.
     - Review password requirements in the section below
     - Directly from the VM display (Ctrl+Alt+Delete, or Ctrl+Opt+Delete on Mac)
     - Alternatively, try going to office.com in the browser, logging in with your state credentials, and selecting "Change password" from the settings icon
