@@ -7,17 +7,14 @@ There are several administrative steps to getting started that you may complete 
 
 1. Get your Yale netID and e-mail set up.
     - Send an e-mail to Anthony with your netID and Yale e-mail address. We will use this to give you access to data and invite you to all of the relevant workspaces.
-    - Check with Anthony to schedule an appointment with Dan Holland to set up your laptop and to get access to our server. You will need Chima to approve access to Dan Holland for the following groups: 
-        - Yale\ysph-hpm-rdpusers (for RDP access)
-        - Yale\ysph-hpm-ndumele (for access to Chima’s share)
-        - storage@yale group: YSPH_HPM-CC0940-MEDSPH2 (where HIPAA Medicaid data is stored)
+    - Request access to Medicaid Data stored on storage@yale group: YSPH_HPM-CC0940-MEDSPH2. First check with Anthony and obtain approval from Chima, then follow these [Instructions for access](https://yale.service-now.com/kb?id=kb_article_view&sysparm_article=KB0027164)
     - When setting up your managed computer, request that ITS install the following programs:
         - Cisco AnyConnect Secure Mobility Client
-        - <strike>Microsoft Remote Desktop</strike> Windows App
+        - Windows App
         - Slack
         - Dropbox
         - Zoom
-    - If these are not installed on your computer, or if there are other programs you need, e-mail Dan Holland and we can get ITS to install them on your computer. 
+    - If these are not installed on your computer, or if there are other programs you need, e-mail ITS to install them on your computer. 
 1. Complete all certifications and/or trainings required by Yale. To determine what trainings you need to complete, navigate [here](https://bmsweb.med.yale.edu/tms/tmspage).
     - You **need** to complete:
         - Human Subject Protection Training 
@@ -28,7 +25,7 @@ There are several administrative steps to getting started that you may complete 
     - [GitHub](https://github.com): code version control and data science collaboration
     - [Dropbox](https://dropbox.com): group collaboration 
     - [Overleaf](https://www.overleaf.com/) manuscript collaboration
-1. Reach out to Anthony to make sure you are part of the YML Google Drive folder and relevant Dropbox folders. 
+1. Reach out to Anthony to make sure you are part of the SCALE Google Drive folder and relevant Dropbox folders. 
 1. Set up a weekly 1:1 with Anthony. 
 
 ## Getting to Know the Team and Projects

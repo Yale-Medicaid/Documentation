@@ -3,13 +3,12 @@
 Research projects are typically lengthy, require several revisions, and often outlast the tenure of the initial primary researcher. By maintaining consistency across projects, other researchers can readily contribute to revisions or new analyses for a project they did not initially work on. The following should act as general guidelines which have proven useful in the past and can be adapted.
 
 ## User Directories
-Within the group's directory, each researcher should create their own folder to have a dedicated place to work.
+Within the group's directory, each user will have their own folder providing a dedicated place to work. On Milgram this will be labeled by your NetID. This folder will be linked and available in your `home/netId/project/` folder. 
 
-- Yale Server: `D:/Groups/YSPH-HPM-Ndumele/Networks/`
 - Milgram: `/gpfs/milgram/project/ndumele/` 
 
 ```
-Networks/
+ndumele/
 ├── Anthony/
 ├── Beniamino/
 ├── Hannah/
@@ -21,7 +20,7 @@ Networks/
 Within your own folder, you can create a separate folder for each distinct project. Choose a short, descriptive name so another researcher would easily know what research project the folder relates to.
 
 ```
-Networks/
+ndumele/
 ├── Anthony/
     ├── Network_Overlap/
     ├── LA_Plan_Effects/
